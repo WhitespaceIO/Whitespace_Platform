@@ -7,7 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 project = Project.create(name: 'Project One', description: 'This is project one.')
-project.phases.create(name: 'Problem', ordinal: 1)
+project.comments.create(:title => "Nice project!", :comment => "Nice project buddy.")
+
+problem = project.phases.create(name: 'Problem', ordinal: 1)
+problem.comments.create(:title => "What's the problem?", :comment => "That's the problem man?!")
+
 project.phases.create(name: 'Solution', ordinal: 2)
 project.phases.create(name: 'Technology', ordinal: 3)
 project.phases.create(name: 'Funding', ordinal: 4)

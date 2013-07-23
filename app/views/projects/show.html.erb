@@ -10,6 +10,31 @@
   <%= @project.description %>
 </p>
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @project.phases.each do |phase| %>
+       <tr>
+         <td><%= phase.name %></td>
+         <td><%= phase.description %></td>
+         <td><%= link_to 'Show', project_phase_path(phase.project, phase) %></td>
+         <td><%= link_to 'Edit', edit_project_phase_path(phase.project, phase) %></td>
+         <td><%= link_to 'Destroy', phase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+  <% end %>
+
+  <% @project.comments.each do |comment| %>
+     <p><%= comment.title %>
+       <%= comment.comment %>
+     </p>
+  <% end %>
+</table>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
