@@ -1,5 +1,9 @@
 Whitespace::Application.routes.draw do
 
+  resources :proposals
+  resources :comments
+
+
   devise_for :members
   resources :members
 
