@@ -3,7 +3,9 @@
 one:
   name: MyString
   description: MyString
+  ordinal: 1
 
 two:
   name: MyString
   description: MyString
+  ordinal: 1

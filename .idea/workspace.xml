@@ -2,20 +2,177 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="740453ee-029d-4209-a8ea-4369ac9627e7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Whitespace_Platform.iml" afterPath="$PROJECT_DIR$/.idea/Whitespace_Platform.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/index.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20130709014557_create_projects.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20130709020119_create_members.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/edit.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/index.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/members_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/members_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/new.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project.rb" afterPath="$PROJECT_DIR$/app/models/project.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/projects.yml" afterPath="$PROJECT_DIR$/test/fixtures/projects.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/projects_controller_test.rb" afterPath="$PROJECT_DIR$/test/functional/projects_controller_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/show.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Whitespace_Platform.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373334075135" ignored="false" />
+    <file path="/Dummy.txt" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374506962130" ignored="false" />
     <file path="/Gemfile" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373334203421" ignored="false" />
     <file path="$PROJECT_DIR$/config/initializers/devise.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373334933004" ignored="false" />
-    <file path="/application.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373335353694" ignored="false" />
+    <file path="/application.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374268224886" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/topics/show.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374007092233" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/interviews/show.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374014954094" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/layouts/application.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374268226861" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/stories_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374523780671" ignored="false" />
+    <file path="/stories_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374522182682" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/config/routes.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374529175913" ignored="false" />
+    <file path="/routes.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374542076077" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/search.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374017219167" ignored="false" />
+    <file path="/search.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374017219167" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/application.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374273016190" ignored="false" />
+    <file path="/application.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374273013722" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/interviews/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373917025342" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374523787160" ignored="false" />
+    <file path="/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374540452581" ignored="false" />
+    <file path="/_story_card.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373406314136" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_story_card.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373406321296" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/topics/show.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373919663354" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/interviews/show.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373919666931" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/search.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373919282387" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/index.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373919195041" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/pages/about.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373498420744" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/pages/contact.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373498426038" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/pages/press.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373484065404" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/pages/support.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374105540420" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/pages/index.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373497303894" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_story_row.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373664692019" ignored="false" />
+    <file path="/_story_row.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373496209463" ignored="false" />
+    <file path="/show.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374540466979" ignored="false" />
+    <file path="/show.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373916551071" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_topic_card.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373406390943" ignored="false" />
+    <file path="/_topic_card.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373406021961" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_interview_card.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373406033366" ignored="false" />
+    <file path="/_interview_card.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373406029984" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/topics/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374004639398" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/controllers/v2/stories_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374177654599" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/models/story.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374179448685" ignored="false" />
+    <file path="/story.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374179373494" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/controllers/application_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374181723712" ignored="false" />
+    <file path="/application_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374527931261" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/models/topic.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373557898941" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/models/interview.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373557889491" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/controllers/v2/interviews_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373558552221" ignored="false" />
+    <file path="/interviews_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907262600" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/controllers/v2/topics_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373558549170" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/posts/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374270216999" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/posts/show.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374270219499" ignored="false" />
+    <file path="/contact.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373473796701" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/posts/new.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373473876564" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/posts/edit.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373473890152" ignored="false" />
+    <file path="/about.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373474001666" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/index.atom.builder" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373478273913" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/index.rss.builder" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373478234634" ignored="false" />
+    <file path="/index.atom.builder" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373478271845" ignored="false" />
+    <file path="/index.rss.builder" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373478232389" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_embed.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373475838881" ignored="false" />
+    <file path="/_embed.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373475838881" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_story_embed.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373478186524" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/_story_embed.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373477170919" ignored="false" />
+    <file path="/_story_embed.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373478186524" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/topics_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907393340" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/interviews_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907385513" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/show.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373993809120" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/posts/show.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373487673258" ignored="false" />
+    <file path="/show.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373933043477" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/posts/index.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373487912578" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/stories/show.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373933583945" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/pages/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374269112262" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/pages_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374529050837" ignored="false" />
+    <file path="/pages_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528949393" ignored="false" />
+    <file path="/topics_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373906902558" ignored="false" />
+    <file path="/index.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373496764231" ignored="false" />
+    <file path="/stories.atom.builder" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373498326423" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/stories.atom.builder" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373498341437" ignored="false" />
+    <file path="/interview.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373557888752" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/config/application.yml" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374524463116" ignored="false" />
+    <file path="/*.regexp" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374526436483" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/bootstrap.css.less" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373561032097" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_story_box.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373917834089" ignored="false" />
+    <file path="/_story_box.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373917834089" ignored="false" />
+    <file path="/index.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373919111133" ignored="false" />
+    <file path="/search.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373914967973" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/javascripts/masonry.pkgd.min.js" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373673122659" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/javascripts/jquery.grid-a-licious.min.js" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373673762519" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/Gemfile" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374524090540" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/stories.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373744693103" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/javascripts/stories.js.coffee" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373744680213" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/paginate.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373904185101" ignored="false" />
+    <file path="/paginate.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373755767259" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/javascripts/stories/index.js.coffee" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373749001440" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/models/story.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373747275155" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/config/initializers/will_paginate.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373747415147" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/config/initializers/constants.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373905496145" ignored="false" />
+    <file path="/constants.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373905896474" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/models/constants.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373905897537" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/models/global.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374176545616" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/topics/more.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907054070" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/interviews/more.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907046433" ignored="false" />
+    <file path="/more.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907045684" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/stories/more.js.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373907057819" ignored="false" />
+    <file path="/application.yml" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373914007269" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_stories_more.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373914634301" ignored="false" />
+    <file path="/_stories_more.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373914633965" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/shared/_story_more.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373922360972" ignored="false" />
+    <file path="/_story_more.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1373922360972" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/lib/tasks/onestory_slug.rake" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374001576842" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/assets/stylesheets/interviews.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374004103556" ignored="false" />
+    <file path="/interviews.css.scss" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374004103556" ignored="false" />
+    <file path="/support.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374105540420" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/lib/tasks/onestory_update.rake" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374169724957" ignored="false" />
+    <file path="/onestory_update.rake" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374169706637" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/models/post.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374179219604" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/controllers/v2/posts_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374178401299" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/models/ability.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374171788125" ignored="false" />
+    <file path="/ability.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374171782262" ignored="false" />
+    <file path="/posts_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374526218988" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/models/post.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374270265180" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/posts_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374526968053" ignored="false" />
+    <file path="/post.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374185724233" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/Gemfile" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374176172668" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/config/routes/v2.0.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374172694480" ignored="false" />
+    <file path="/v2.0.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374172692285" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/posts/_form.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374251166174" ignored="false" />
+    <file path="/_form.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374540481359" ignored="false" />
+    <file path="/story_job.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374177082125" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_API/app/jobs/story_job.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374178275799" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/models/user.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374531812604" ignored="false" />
+    <file path="/user.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528470126" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/application_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528033351" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/sessions_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374527533796" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374253337785" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/config/initializers/warden.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374534059735" ignored="false" />
+    <file path="/warden.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374533925943" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/warden_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374524200462" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/login_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374527240924" ignored="false" />
+    <file path="/login_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374527229327" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/login/index.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374527124608" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/sessions/new.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528140439" ignored="false" />
+    <file path="/new.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528663982" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/users/new.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528664299" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/controllers/users_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528854478" ignored="false" />
+    <file path="/users_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528838957" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/pages/welcome.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374528937660" ignored="false" />
+    <file path="/welcome.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374529096799" ignored="false" />
+    <file path="$PROJECT_DIR$/../OneStory_Web/app/views/users/welcome.html.erb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374529098194" ignored="false" />
+    <file path="/projects_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374540003146" ignored="false" />
+    <file path="/20130709014557_create_projects.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374539046515" ignored="false" />
+    <file path="/project.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374540697631" ignored="false" />
+    <file path="/members_controller.rb" changelist="740453ee-029d-4209-a8ea-4369ac9627e7" time="1374540601259" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +204,88 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="2" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+            <state line="36" column="42" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seeds.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="49" selection-start="2735" selection-end="2735" vertical-scroll-proportion="-10.416667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="2" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projects_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="61" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/project.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="35" selection-start="16" selection-end="34" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="62" selection-start="176" selection-end="176" vertical-scroll-proportion="-7.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/projects/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="43" selection-start="235" selection-end="235" vertical-scroll-proportion="-9.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/projects/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="4" selection-start="508" selection-end="540" vertical-scroll-proportion="0.40482953">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="members_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/members_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="51" selection-start="717" selection-end="761" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -62,28 +300,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <file leaf-file-name="20130709015151_devise_create_members.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20130709015151_devise_create_members.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="34" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.26124817">
+            <state line="15" column="54" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <file leaf-file-name="pages_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="2" column="23" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projects_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phases_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/phases_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="48" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phase.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/phase.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20130723004253_create_phases.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20130723004253_create_phases.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="24" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,8 +373,18 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130709014557_create_projects.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/pages/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/phase.rb" />
+        <option value="$PROJECT_DIR$/app/views/projects/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/projects/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/members_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/project.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/projects/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -144,8 +419,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,7 +493,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,6 +520,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Whitespace_Platform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Whitespace_Platform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,11 +619,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Rails.Development: Whitespace_Platform">
@@ -374,6 +680,36 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -392,6 +728,32 @@
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
@@ -519,26 +881,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -602,44 +964,65 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20130709015151_devise_create_members.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/phases_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="48" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/phase.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="49" selection-start="2735" selection-end="2735" vertical-scroll-proportion="-10.416667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="3" column="2" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/app/views/projects/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
+        <state line="15" column="43" selection-start="235" selection-end="235" vertical-scroll-proportion="-9.375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environment.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="12" column="62" selection-start="176" selection-end="176" vertical-scroll-proportion="-7.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130709015151_devise_create_members.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="2" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+        <state line="15" column="54" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -651,9 +1034,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130723004253_create_phases.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="34" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.26124817">
+        <state line="11" column="24" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/project.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="35" selection-start="16" selection-end="34" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="61" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="42" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="508" selection-end="540" vertical-scroll-proportion="0.40482953">
           <folding />
         </state>
       </provider>
