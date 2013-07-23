@@ -7,6 +7,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'make_voteable'
 
 group :production do
 

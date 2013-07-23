@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+project = Project.create(name: 'Project One', description: 'This is project one.')
+project.phases.create(name: 'Problem', ordinal: 1)
+project.phases.create(name: 'Solution', ordinal: 2)
+project.phases.create(name: 'Technology', ordinal: 3)
+project.phases.create(name: 'Funding', ordinal: 4)
+project.phases.create(name: 'Team', ordinal: 5)
+project.phases.create(name: 'Design', ordinal: 6)
+project.phases.create(name: 'Prototype', ordinal: 7)
+project.phases.create(name: 'Develop', ordinal: 8)
+project.phases.create(name: 'Deploy', ordinal: 9)

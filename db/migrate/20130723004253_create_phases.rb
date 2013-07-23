@@ -4,7 +4,7 @@ class CreatePhases < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.integer :ordinal
-
+      t.belongs_to :project
       t.timestamps
     end
   end

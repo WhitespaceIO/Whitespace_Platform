@@ -1,16 +1,17 @@
 Whitespace::Application.routes.draw do
 
-  resources :comments
-
-
   devise_for :members
   resources :members
 
+  resources :phases do
+    resources :comments
+  end
+
   resources :projects do
     resources :phases do
-      #resources :comments
+      resources :comments
     end
-    #resources :comments
+    resources :comments
   end
 
   # The priority is based upon order of creation:
