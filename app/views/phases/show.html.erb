@@ -10,6 +10,20 @@
   <%= @phase.description %>
 </p>
 
+<% @phase.comments.each do |comment| %>
+     <p>Comment: <%= comment.title %>
+       <i><%= comment.comment %></i>
+     </p>
+<% end %>
+
+<% @phase.proposals.each do |proposal| %>
+     <p>Proposal: <%= proposal.text %></p>
+     <ul>
+     <% proposal.comments.each do |comment| %>
+      <li><%= comment.title %> <i><%= comment.comment %></i></li>
+     <% end %>
+     </ul>
+<% end %>
 
 <%= link_to 'Edit', edit_phase_path(@phase) %> |
 <%= link_to 'Back', phases_path %>

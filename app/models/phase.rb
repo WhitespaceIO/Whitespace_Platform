@@ -1,5 +1,5 @@
 class Phase < ActiveRecord::Base
-  attr_accessible :description, :name, :ordinal, :comments_attributes
+  attr_accessible :description, :name, :ordinal
   belongs_to :project
   has_many :proposals
 

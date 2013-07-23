@@ -12,6 +12,10 @@ project.comments.create(:title => "Nice project!", :comment => "Nice project bud
 problem = project.phases.create(name: 'Problem', ordinal: 1)
 problem.comments.create(:title => "What's the problem?", :comment => "That's the problem man?!")
 
+proposal1 = problem.proposals.create(text: 'This is a proposal to the problem.')
+proposal1.comments.create(:title => "Nice proposal!", :comment => "Dude, that's a nice proposal!")
+proposal2 = problem.proposals.create(text: 'This is another proposal to the problem.')
+
 project.phases.create(name: 'Solution', ordinal: 2)
 project.phases.create(name: 'Technology', ordinal: 3)
 project.phases.create(name: 'Funding', ordinal: 4)
