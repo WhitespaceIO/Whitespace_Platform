@@ -1,5 +1,6 @@
 Whitespace::Application.routes.draw do
 
+  resources :proposals
   resources :comments
 
 
