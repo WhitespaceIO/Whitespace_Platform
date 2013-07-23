@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130723024841) do
     t.string   "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "phase_id"
   end
 
   create_table "votings", :force => true do |t|
