@@ -18,6 +18,10 @@ Whitespace::Application.routes.draw do
     resources :comments
   end
 
+  root :to => 'projects#index'
+
+  match '*path' => redirect('/')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

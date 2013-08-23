@@ -7,7 +7,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
-
+gem 'cancan'
 gem 'make_voteable'
 gem 'acts_as_commentable', '3.0.1'
 

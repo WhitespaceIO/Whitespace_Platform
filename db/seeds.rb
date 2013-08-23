@@ -1,26 +1,40 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+yxevotes = Project.create(name: 'YXE Votes', description: 'A social platform for the Saskatoon 2012 Civic Election sharing candidates and ward information.')
+yxevotes.comments.create(:title => 'YXE Votes rocks!', :comment => 'Nice work on YXE Votes!')
+
+yxevoices = Project.create(name: 'YXE Voices', description: 'A civic engagement platform to promote the sharing and discussion of ideas on ways to improve our city.')
+yxevoices.comments.create(:title => 'YXE Voices is great!', :comment => 'Nice work on YXE Voices!')
+
+pandobranches = Project.create(name: 'Pando Branches', description: 'Mapping the location of donated fruit trees to automate the workload for coordinating the harvest.')
+pandobranches.comments.create(:title => 'Pando Branches rules!', :comment => 'Nice work on Pando Branches!')
+
+storyproject = Project.create(name: 'Story Project', description: 'A story telling platform to share amazing life experiences that embraces the idea that everyone has a story to share.')
+storyproject.comments.create(:title => 'Story Project will change the world!', :comment => 'Stories can change the world!')
+
+smsproject = Project.create(name: 'SMS Project', description: 'Leveraging SMS as a platform to provide support services for vulnerable groups in our community.')
+smsproject.comments.create(:title => 'SMS Project is cool!', :comment => 'SMS Project!')
+
+healthmap = Project.create(name: 'Health Facility Map', description: 'Partnership with BongoHive to build a map of all the health facilities in Saskatchewan.')
+healthmap.comments.create(:title => 'Health Facility Map is cool!', :comment => 'Nice work on Health Facility Map!')
+
+repurposedlabs = Project.create(name: 'Repurposed Labs', description: 'Bridging the digital divide by repurposing used computers into free internet access terminals for disadvantaged communities.')
+repurposedlabs.comments.create(:title => 'Repurposed Labs is cool!', :comment => 'Thanks for Repurposed Labs!')
+
+votebecause = Project.create(name: 'I Vote Because', description: 'Pro-democracy movement to encourage Canadians to share why voting matters, why every voice counts.')
+votebecause.comments.create(:title => 'I Vote Because', :comment => 'Thanks for I Vote Because :)')
+
+#problem = yxevotes.phases.create(name: 'Problem', ordinal: 1)
+#problem.comments.create(title: "What's the problem?", comment: "That's the problem man?!")
 #
-# Examples:
+#proposal1 = problem.proposals.create(text: 'This is a proposal to the problem.')
+#proposal1.comments.create(:title => 'Nice proposal!', comment: "Dude, that's a nice proposal!")
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#proposal2 = problem.proposals.create(text: 'This is another proposal to the problem.')
 
-project = Project.create(name: 'Project One', description: 'This is project one.')
-project.comments.create(:title => "Nice project!", :comment => "Nice project buddy.")
-
-problem = project.phases.create(name: 'Problem', ordinal: 1)
-problem.comments.create(:title => "What's the problem?", :comment => "That's the problem man?!")
-
-proposal1 = problem.proposals.create(text: 'This is a proposal to the problem.')
-proposal1.comments.create(:title => "Nice proposal!", :comment => "Dude, that's a nice proposal!")
-proposal2 = problem.proposals.create(text: 'This is another proposal to the problem.')
-
-project.phases.create(name: 'Solution', ordinal: 2)
-project.phases.create(name: 'Technology', ordinal: 3)
-project.phases.create(name: 'Funding', ordinal: 4)
-project.phases.create(name: 'Team', ordinal: 5)
-project.phases.create(name: 'Design', ordinal: 6)
-project.phases.create(name: 'Prototype', ordinal: 7)
-project.phases.create(name: 'Develop', ordinal: 8)
-project.phases.create(name: 'Deploy', ordinal: 9)
+#yxevotes.phases.create(name: 'Solution', ordinal: 2)
+#yxevotes.phases.create(name: 'Technology', ordinal: 3)
+#yxevotes.phases.create(name: 'Funding', ordinal: 4)
+#yxevotes.phases.create(name: 'Team', ordinal: 5)
+#yxevotes.phases.create(name: 'Design', ordinal: 6)
+#yxevotes.phases.create(name: 'Prototype', ordinal: 7)
+#yxevotes.phases.create(name: 'Develop', ordinal: 8)
+#yxevotes.phases.create(name: 'Deploy', ordinal: 9)
