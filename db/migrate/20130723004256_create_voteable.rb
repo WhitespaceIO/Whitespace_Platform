@@ -1,4 +1,4 @@
-class CreateMakeVoteableTables < ActiveRecord::Migration
+class CreateVoteable < ActiveRecord::Migration
    def self.up
      create_table :votings do |t|
        t.string :voteable_type

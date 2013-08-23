@@ -29,12 +29,3 @@ votebecause.comments.create(:title => 'I Vote Because', :comment => 'Thanks for 
 #proposal1.comments.create(:title => 'Nice proposal!', comment: "Dude, that's a nice proposal!")
 #
 #proposal2 = problem.proposals.create(text: 'This is another proposal to the problem.')
-
-#yxevotes.phases.create(name: 'Solution', ordinal: 2)
-#yxevotes.phases.create(name: 'Technology', ordinal: 3)
-#yxevotes.phases.create(name: 'Funding', ordinal: 4)
-#yxevotes.phases.create(name: 'Team', ordinal: 5)
-#yxevotes.phases.create(name: 'Design', ordinal: 6)
-#yxevotes.phases.create(name: 'Prototype', ordinal: 7)
-#yxevotes.phases.create(name: 'Develop', ordinal: 8)
-#yxevotes.phases.create(name: 'Deploy', ordinal: 9)
