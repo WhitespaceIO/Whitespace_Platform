@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'less-rails'
@@ -12,11 +11,11 @@ gem 'make_voteable'
 gem 'acts_as_commentable', '3.0.1'
 
 group :production do
-
+  gem 'pg'
 end
 
 group :development do
-
+  gem 'sqlite3'
 end
 
 group :assets do
