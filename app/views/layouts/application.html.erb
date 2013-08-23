@@ -57,7 +57,15 @@
               <li><%= link_to "Projects", projects_path  %></li>
               <li><%= link_to "Users", users_path  %></li>
             </ul>
-          </div><!--/.nav-collapse -->
+            <div id="login">
+              <% if user_signed_in? %>
+                   <%= current_user.email %>
+                   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                   <%= link_to "Sign In", new_user_session_path %> | <%= link_to "Sign up", new_user_registration_path %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

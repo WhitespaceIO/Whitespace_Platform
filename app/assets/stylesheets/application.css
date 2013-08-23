@@ -10,3 +10,8 @@
  *
  *= require_self
  */
+
+#login {
+    float:right;
+    margin-top: 10px;
+}
