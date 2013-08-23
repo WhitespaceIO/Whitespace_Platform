@@ -8,6 +8,10 @@ class Project < ActiveRecord::Base
   make_voteable
   acts_as_commentable
 
+  def to_param
+    [id, name.parameterize].join("-")
+  end
+
   def init
     #TODO move this into config file
     if self.phases.empty?

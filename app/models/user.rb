@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
   make_voter
 
+  def to_param
+    [id, firstname.parameterize, lastname.parameterize].join("-")
+  end
+
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
   end
