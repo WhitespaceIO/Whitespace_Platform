@@ -21,11 +21,3 @@ repurposedlabs.comments.create(:title => 'Repurposed Labs is cool!', :comment =>
 
 votebecause = Project.create(name: 'I Vote Because', description: 'Pro-democracy movement to encourage Canadians to share why voting matters, why every voice counts.')
 votebecause.comments.create(:title => 'I Vote Because', :comment => 'Thanks for I Vote Because :)')
-
-#problem = yxevotes.phases.create(name: 'Problem', ordinal: 1)
-#problem.comments.create(title: "What's the problem?", comment: "That's the problem man?!")
-#
-#proposal1 = problem.proposals.create(text: 'This is a proposal to the problem.')
-#proposal1.comments.create(:title => 'Nice proposal!', comment: "Dude, that's a nice proposal!")
-#
-#proposal2 = problem.proposals.create(text: 'This is another proposal to the problem.')
