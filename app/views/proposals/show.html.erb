@@ -1,10 +1,17 @@
+<h4><%= link_to 'Projects', projects_path %> |
+  <%= link_to @proposal.phase.project.name, project_path(@proposal.phase.project) %> |
+  <%= link_to 'Phases', project_phases_path(@proposal.phase.project) %> |
+  <%= link_to @proposal.phase.name, project_phase_path(@proposal.phase.project, @proposal.phase) %> |
+Proposal</h4>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Text:</b>
-  <%= @proposal.text %>
-</p>
-
-
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+<hr>
+<div class="box proposal clear"><%= @proposal.text %></div>
+<hr>
+<h4>Comments</h4>
+<div class="comments clear">
+  <%= render partial: 'comments/comment', :collection => @proposal.comments, :as => :comment %>
+</div>
+<div class="box">
+  <%= render 'comment_form', :locals=>{:proposal => @proposal, :comment => @comment} %>
+</div>
+<hr>

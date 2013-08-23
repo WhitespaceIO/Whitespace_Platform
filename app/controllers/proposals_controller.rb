@@ -1,83 +1,65 @@
 class ProposalsController < ApplicationController
-  # GET /proposals
-  # GET /proposals.json
-  def index
-    @proposals = Proposal.all
+  before_filter :find_project, :only => [:index, :create]
+  before_filter :find_phase, :only => [:index, :create]
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @proposals }
-    end
+  def index
+    @proposals = @phase.proposals
+    respond_with_proposals :ok, @proposals
   end
 
-  # GET /proposals/1
-  # GET /proposals/1.json
   def show
     @proposal = Proposal.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @proposal }
-    end
+    @comment = Comment.new
+    respond_with_proposals :ok, @proposal
   end
 
-  # GET /proposals/new
-  # GET /proposals/new.json
   def new
     @proposal = Proposal.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @proposal }
-    end
+    @proposal.phase = @phase
+    respond_with_proposals :ok, @proposal
   end
 
-  # GET /proposals/1/edit
   def edit
     @proposal = Proposal.find(params[:id])
+    respond_with_proposals :ok, @proposal
   end
 
-  # POST /proposals
-  # POST /proposals.json
   def create
-    @proposal = Proposal.new(params[:proposal])
-
-    respond_to do |format|
-      if @proposal.save
-        format.html { redirect_to @proposal, notice: 'Proposal was successfully created.' }
-        format.json { render json: @proposal, status: :created, location: @proposal }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @proposal.errors, status: :unprocessable_entity }
-      end
-    end
+    logger.info "Params #{params.inspect}"
+    @proposal = @phase.proposals.create (params[:proposal])
+    respond_with_proposals :created,
+                           @proposal,
+                           project_phase_path(@proposal.phase.project, @proposal.phase),
+                           'Proposal was successfully created.'
   end
 
-  # PUT /proposals/1
-  # PUT /proposals/1.json
   def update
     @proposal = Proposal.find(params[:id])
-
-    respond_to do |format|
-      if @proposal.update_attributes(params[:proposal])
-        format.html { redirect_to @proposal, notice: 'Proposal was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @proposal.errors, status: :unprocessable_entity }
-      end
-    end
+    @proposal.update_attributes!(params[:proposal])
+    respond_with_proposals :created, @proposal, nil, 'Proposal was successfully updated.'
   end
 
-  # DELETE /proposals/1
-  # DELETE /proposals/1.json
   def destroy
     @proposal = Proposal.find(params[:id])
     @proposal.destroy
-
-    respond_to do |format|
-      format.html { redirect_to proposals_url }
-      format.json { head :no_content }
-    end
+    respond_with_nothing :no_content
   end
+
+  private
+
+  def find_project
+    @project = Project.find(params[:project_id])
+  end
+
+  def find_phase
+    @phase = Phase.find(params[:phase_id])
+  end
+
+  def respond_with_proposals(status, proposals, location = nil, notice = nil)
+    respond_with proposals,
+                 status: status,
+                 location: location,
+                 notice: notice
+  end
+
 end

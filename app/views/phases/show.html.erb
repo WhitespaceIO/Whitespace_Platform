@@ -1,29 +1,24 @@
+<h4><%= link_to 'Projects', projects_path %> |
+  <%= link_to @phase.project.name, project_path(@phase.project) %> |
+  <%= link_to 'Phases', project_phases_path(@phase.project) %> |
+  <%= @phase.name %></h4>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @phase.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @phase.description %>
-</p>
-
-<% @phase.comments.each do |comment| %>
-     <p>Comment: <%= comment.title %>
-       <i><%= comment.comment %></i>
-     </p>
-<% end %>
-
-<% @phase.proposals.each do |proposal| %>
-     <p>Proposal: <%= proposal.text %></p>
-     <ul>
-     <% proposal.comments.each do |comment| %>
-      <li><%= comment.title %> <i><%= comment.comment %></i></li>
-     <% end %>
-     </ul>
-<% end %>
-
-<%= link_to 'Edit', edit_phase_path(@phase) %> |
-<%= link_to 'Back', phases_path %>
+<h5><%= @phase.description %></h5>
+<hr>
+<h4><%= link_to 'Proposals', project_phase_proposals_path(@phase.project, @phase) %></h4>
+<div class="proposals clear">
+  <%= render partial: 'proposal', :collection => @phase.proposals, :as => :proposal %>
+</div>
+<div class="box">
+     <%= render 'proposals/form', :locals=>{:phase => @phase, :proposal => @proposal} %>
+</div>
+<hr>
+<h4>Comments</h4>
+<div class="comments clear">
+  <%= render partial: 'comments/comment', :collection => @phase.comments, :as => :comment %>
+</div>
+<div class="box">
+  <%= render 'comment_form', :locals=>{:phase => @phase, :comment => @comment} %>
+</div>
+<hr>

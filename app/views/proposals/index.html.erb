@@ -1,23 +1,14 @@
-<h1>Listing proposals</h1>
-
-<table>
-  <tr>
-    <th>Text</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @proposals.each do |proposal| %>
-  <tr>
-    <td><%= proposal.text %></td>
-    <td><%= link_to 'Show', proposal %></td>
-    <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-    <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Proposal', new_proposal_path %>
+<h4><%= link_to 'Projects', projects_path %> |
+  <%= link_to @phase.project.name, project_path(@phase.project) %> |
+  <%= link_to 'Phases', project_phases_path(@phase.project) %> |
+  <%= link_to @phase.name, project_phase_path(@phase.project, @phase) %> |
+  Proposals</h4>
+<hr>
+<div class="proposals clear">
+  <% @proposals.each do |proposal| %>
+       <div class="box rounded proposal">
+         <%= link_to proposal.text, project_phase_proposal_path(proposal.phase.project, proposal.phase, proposal) %>
+       </div>
+  <% end %>
+</div>
+<hr>

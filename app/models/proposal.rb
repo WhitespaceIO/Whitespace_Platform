@@ -1,6 +1,7 @@
 class Proposal < ActiveRecord::Base
   attr_accessible :text
 
+  belongs_to :phase
   belongs_to :user
 
   make_voteable

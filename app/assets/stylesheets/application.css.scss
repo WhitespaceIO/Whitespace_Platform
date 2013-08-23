@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+#login {
+  float:right;
+}
+#footer {
+
+}
+.links {
+  float:right;
+}
+.add {
+}
+.box {
+  display: block;
+  background-color: #F2F2F2;
+  padding:10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.project {
+  .project-name {
+    font-weight: bold;
+  }
+  .project-description {
+
+  }
+}
+.user {
+  .user-name {
+    font-weight:bold;
+  }
+  .user-email {
+
+  }
+}
+.clear:after,
+hr:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

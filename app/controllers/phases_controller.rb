@@ -4,9 +4,14 @@ class PhasesController < ApplicationController
 
   def index
     @phases = @project.phases
+    @comment = Comment.new
+    respond_with @phases
   end
 
   def show
+    @proposal = Proposal.new
+    @comment = Comment.new
+    respond_with @phase
   end
 
   private
@@ -17,5 +22,12 @@ class PhasesController < ApplicationController
 
   def find_phase
     @phase = Phase.find(params[:id])
+  end
+
+  def respond_with_phases(status, phases, location = nil, notice = nil)
+    respond_with phases,
+                 status: status,
+                 location: location,
+                 notice: notice
   end
 end

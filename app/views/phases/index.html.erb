@@ -1,24 +1,17 @@
-<h1>Phases</h1>
+<h4><%= link_to 'Projects', projects_path %> |
+    <%= link_to @project.name, project_path(@project) %> | Phases</h4>
+<hr>
+<div class="phases clear">
+  <%= render partial: 'phase', :collection => @phases, :as => :phase %>
+</div>
+<hr>
+<h4>Comments</h4>
+<div class="comments clear">
+  <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
+</div>
+<div class="box">
+  <%= render 'projects/comment_form', :locals=>{:project => @project, :comment => @comment} %>
+</div>
+<hr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @phases.each do |phase| %>
-       <tr>
-         <td><%= phase.name %></td>
-         <td><%= phase.description %></td>
-         <td><%= link_to 'Show', project_phase_path(phase.project, phase) %></td>
-         <td><%= link_to 'Edit', edit_project_phase_path(phase.project, phase) %></td>
-         <td><%= link_to 'Destroy', phase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-       </tr>
-  <% end %>
-</table>
-
-<br />
 

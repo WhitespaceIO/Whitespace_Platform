@@ -2,40 +2,46 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    respond_with @users
+    respond_with_users :ok, @users
   end
 
   def show
     @user = User.find(params[:id])
-    respond_with @user
+    respond_with_users :ok, @user
   end
 
   def new
     @user = User.new
+    respond_with_users :ok, @user
   end
 
   def edit
     @user = User.find(params[:id])
+    respond_with_users :ok, @user
   end
 
   def create
     @user = User.new(params[:user])
-    respond_with(@user, :location => users_url) do |format|
-      format.html { redirect_to user_path }
-    end
+    respond_with_users :created, @user, users_path(@user)
   end
 
   def update
     @user = User.find(params[:id])
-    respond_with @user
+    respond_with_users :accepted, @user
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.any(:xml, :json) { head :no_content }
-    end
+    respond_with_nothing :no_content
+  end
+
+  private
+
+  def respond_with_users(status, users, location = nil, notice = nil)
+    respond_with users,
+                 status: status,
+                 location: location,
+                 notice: notice
   end
 end

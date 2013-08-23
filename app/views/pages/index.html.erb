@@ -1,1 +1,17 @@
-<h3>Pages#Index</h3>
+<div class="clear">
+  <div class="box">
+    <%= link_to 'I Have A Problem', '/problem' %>
+  </div>
+  <div class="box">
+    <%= link_to 'I Want To Help', '/help' %>
+  </div>
+</div>
+<hr>
+<div class="project">
+  <% @projects.each do |project| %>
+       <div class="box rounded">
+         <%= link_to project.name, project_path(project), {:title => project.description} %>
+       </div>
+  <% end %>
+</div>
+<hr>
