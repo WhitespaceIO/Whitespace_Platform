@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130723004256) do
   create_table "phases", :force => true do |t|
     t.string   "name"
     t.string   "description"
+    t.string   "state"
     t.integer  "ordinal"
     t.date     "started_at"
     t.date     "completed_at"

@@ -9,6 +9,7 @@ gem 'devise'
 gem 'cancan'
 gem 'make_voteable'
 gem 'acts_as_commentable', '3.0.1'
+gem 'state_machine'
 
 group :production do
   gem 'pg'
