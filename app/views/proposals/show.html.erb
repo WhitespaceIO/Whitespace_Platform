@@ -11,7 +11,9 @@ Proposal</h4>
 <div class="comments clear">
   <%= render partial: 'comments/comment', :collection => @proposal.comments, :as => :comment %>
 </div>
+<% if can? :create, Comment %>
 <div class="box">
   <%= render 'comment_form', :locals=>{:proposal => @proposal, :comment => @comment} %>
 </div>
+<% end %>
 <hr>

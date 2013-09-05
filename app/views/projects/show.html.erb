@@ -11,7 +11,9 @@
 <div class="comments clear">
   <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
 </div>
+<% if can? :create, Comment %>
 <div class="box">
   <%= render 'comment_form', :locals=>{:project => @project, :comment => @comment} %>
 </div>
+<% end %>
 <hr>
