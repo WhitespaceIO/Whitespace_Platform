@@ -21,3 +21,7 @@ repurposedlabs.comments.create(:title => 'Repurposed Labs is cool!', :comment =>
 
 votebecause = Project.create(name: 'I Vote Because', description: 'Pro-democracy movement to encourage Canadians to share why voting matters, why every voice counts.')
 votebecause.comments.create(:title => 'I Vote Because', :comment => 'Thanks for I Vote Because :)')
+
+User.create(:email => 'guest@whitespace.io', :password => 'password', :firstname => 'Guest', :lastname => 'Guest', :role => 'guest')
+User.create(:email => 'user@whitespace.io', :password => 'password', :firstname => 'User', :lastname => 'User', :role => 'user')
+User.create(:email => 'admin@whitespace.io', :password => 'password', :firstname => 'Admin', :lastname => 'Admin', :role => 'admin')
