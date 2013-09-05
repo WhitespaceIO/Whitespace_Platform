@@ -6,19 +6,19 @@ class CommentsController < ApplicationController
     def create
       logger.info "Params #{params.inspect}"
       if !@proposal.nil?
-        @comment = @proposal.comments.create(params[:comment])
+        @comment = @proposal.comments.create(params[:comment].merge(:user => current_user))
         respond_with_comments :created,
                               @comment,
                               project_phase_proposal_path(@proposal.phase.project, @proposal.phase, @proposal),
                               'Proposal comment created.'
       elsif !@phase.nil?
-        @comment = @phase.comments.create(params[:comment])
+        @comment = @phase.comments.create(params[:comment].merge(:user => current_user))
         respond_with_comments :created,
                               @comment,
                               project_phase_path(@phase.project, @phase),
                               'Phase comment created.'
       elsif !@project.nil?
-        @comment = @project.comments.create(params[:comment])
+        @comment = @project.comments.create(params[:comment].merge(:user => current_user))
         respond_with_comments :created,
                               @comment,
                               project_path(@project),

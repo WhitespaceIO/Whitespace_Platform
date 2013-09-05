@@ -24,4 +24,7 @@ class User < ActiveRecord::Base
     #[id, firstname.parameterize, lastname.parameterize].join("-")
   end
 
+  def display_name()
+    "#{self.firstname} #{self.lastname}".strip
+  end
 end
