@@ -13,4 +13,6 @@ class Comment < ActiveRecord::Base
   #acts_as_voteable
 
   attr_accessible :title, :comment
+
+  validates_length_of :comment, :minimum => 5
 end
