@@ -10,9 +10,11 @@
 <div class="proposals clear">
   <%= render partial: 'proposal', :collection => @phase.proposals, :as => :proposal %>
 </div>
+<% if can? :create, Proposal %>
 <div class="box">
      <%= render 'proposals/form', :locals=>{:phase => @phase, :proposal => @proposal} %>
 </div>
+<% end %>
 <hr>
 <h4>Comments</h4>
 <div class="comments clear">
