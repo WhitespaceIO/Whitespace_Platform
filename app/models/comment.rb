@@ -12,7 +12,7 @@ class Comment < ActiveRecord::Base
   # want user to vote on the quality of comments.
   #acts_as_voteable
 
-  attr_accessible :title, :comment
+  attr_accessible :title, :comment, :user
 
   validates_length_of :comment, :minimum => 5
 end
