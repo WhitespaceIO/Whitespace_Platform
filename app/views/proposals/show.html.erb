@@ -13,7 +13,7 @@ Proposal</h4>
 </div>
 <% if can? :create, Comment %>
 <div class="box">
-  <%= render 'comment_form', :locals=>{:proposal => @proposal, :comment => @comment} %>
+  <%= render 'comments/form', :record => [@proposal.phase.project, @proposal.phase, @proposal, @comment], :comment => @comment  %>
 </div>
 <% end %>
 <hr>

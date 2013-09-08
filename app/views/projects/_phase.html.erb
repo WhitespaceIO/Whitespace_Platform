@@ -1,4 +1,5 @@
-<div class="box phase">
-  <div class="phase-title"><%= link_to phase.name, project_phase_path(phase.project, phase) %></div>
-  <div class="phase-description"><%= phase.description %></div>
-</div>
+<span class="box phase">
+  <span class="phase-title"><%= link_to phase.name, project_phase_path(phase.project, phase) %></span>
+  <span class="phase-description"><%= phase.description %></span>
+  <span class="phase-state"><%= phase.state %></span>
+</span>

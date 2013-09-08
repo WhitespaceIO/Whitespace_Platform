@@ -25,7 +25,7 @@
 </div>
 <% if can? :create, Comment %>
 <div class="box">
-  <%= render 'comment_form', :locals=>{:phase => @phase, :comment => @comment} %>
+  <%= render 'comments/form', :record => [@phase.project, @phase, @comment], :comment => @comment  %>
 </div>
 <% end %>
 <hr>
