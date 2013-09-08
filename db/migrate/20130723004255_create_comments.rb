@@ -1,16 +1,14 @@
 class CreateComments < ActiveRecord::Migration
   def self.up
     create_table :comments do |t|
-      t.string :title, :limit => 50, :default => "" 
-      t.text :comment
-      t.references :commentable, :polymorphic => true
-      t.references :user
+      t.text :text
+      t.belongs_to :commentable, :polymorphic => true
+      t.belongs_to :user
       t.timestamps
     end
 
-    add_index :comments, :commentable_type
-    add_index :comments, :commentable_id
     add_index :comments, :user_id
+    add_index :comments, [:commentable_id, :commentable_type]
   end
 
   def self.down

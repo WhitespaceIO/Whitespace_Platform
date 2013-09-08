@@ -3,8 +3,11 @@
   <%= link_to 'Phases', project_phases_path(@phase.project) %> |
   <%= @phase.name %></h4>
 <p id="notice"><%= notice %></p>
-
 <h5><%= @phase.description %></h5>
+<hr>
+<% @phase.tags.each do |tag|%>
+     <span class="tag"><%= tag.name %></span>
+<% end %>
 <hr>
 <h4><%= link_to 'Proposals', project_phase_proposals_path(@phase.project, @phase) %></h4>
 <div class="proposals clear">

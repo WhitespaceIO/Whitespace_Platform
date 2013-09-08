@@ -2,10 +2,13 @@ class Phase < ActiveRecord::Base
   attr_accessible :name, :description, :state, :ordinal, :started_at, :completed_at
 
   belongs_to :project
+
   has_many :proposals
+  has_many :comments, as: :commentable
+  has_many :taggings, :as => :taggable
+  has_many :tags, :through => :taggings
 
   validates :name, presence: true
-  acts_as_commentable
 
   state_machine :initial => :pending do
 

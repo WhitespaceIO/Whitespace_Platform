@@ -1,12 +1,15 @@
 class Project < ActiveRecord::Base
   after_create :init
   attr_accessible :description, :name, :comments_attributes
+
   has_many :phases, dependent: :destroy
+  has_many :comments, dependent: :destroy, as: :commentable
+  has_many :taggings, dependent: :destroy, :as => :taggable
+  has_many :tags, :through => :taggings
 
   validates :name, presence: true
 
   make_voteable
-  acts_as_commentable
 
   def to_param
     [id, name.parameterize].join("-")

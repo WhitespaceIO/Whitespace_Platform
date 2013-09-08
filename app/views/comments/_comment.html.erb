@@ -1,5 +1,5 @@
 <div class="box rounded comment">
   <div class="comment-date"><%= comment.created_at %></div>
   <div class="comment-user"><%= comment.user.nil? ? "Anonymous" : comment.user.display_name %></div>
-  <div class="comment-text"><%= comment.comment %></div>
+  <div class="comment-text"><%= comment.text %></div>
 </div>
