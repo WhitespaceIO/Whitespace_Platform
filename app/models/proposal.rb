@@ -9,5 +9,4 @@ class Proposal < ActiveRecord::Base
   has_many :tags, :through => :taggings
 
   make_voteable
-  acts_as_commentable
 end
