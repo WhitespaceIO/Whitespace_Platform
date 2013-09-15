@@ -10,6 +10,7 @@ gem 'cancan'
 gem 'make_voteable'
 gem 'state_machine'
 gem 'font-awesome-rails'
+gem 'figaro'
 
 group :production do
   gem 'pg'
