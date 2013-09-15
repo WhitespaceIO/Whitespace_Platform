@@ -2,17 +2,18 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new
-    if user.role? :admin
+    user ||= Guest.new
+    Rails.logger.info "USER #{user.inspect}"
+    if user.is_a?(Admin)
       Rails.logger.debug "ADMIN #{user.email}"
+      can :manage, User
       can :manage, Project
       can :manage, Phase
       can :manage, Idea
-      can :manage, User
-      can :manage, Comment
       can :manage, Resource
-    elsif user.role? :user
-      Rails.logger.debug "USER #{user.email}"
+      can :manage, Comment
+    elsif user.is_a?(Member)
+      Rails.logger.debug "MEMBER #{user.email}"
       can :create, Project
       can :read, Project
       can :read, Phase
@@ -29,12 +30,12 @@ class Ability
       end
     else
       Rails.logger.debug "GUEST #{user.email}"
+      can :read, User
       can :read, Project
       can :read, Phase
       can :read, Idea
-      can :read, Comment
-      can :read, User
       can :read, Resource
+      can :read, Comment
     end
   end
 end

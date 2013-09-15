@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.create(params[:user].merge(role: 'user'))
     respond_with_users :created, @user, users_path(@user)
   end
 
