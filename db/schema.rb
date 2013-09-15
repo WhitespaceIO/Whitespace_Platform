@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20130914195026) do
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
+  create_table "ideas", :force => true do |t|
+    t.string   "text"
+    t.integer  "user_id"
+    t.integer  "phase_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "phases", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -47,14 +55,6 @@ ActiveRecord::Schema.define(:version => 20130914195026) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "proposals", :force => true do |t|
-    t.string   "text"
-    t.integer  "user_id"
-    t.integer  "phase_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "resources", :force => true do |t|

@@ -9,13 +9,13 @@
      <span class="tag"><%= tag.name %></span>
 <% end %>
 <hr>
-<h4><%= link_to 'Proposals', project_phase_proposals_path(@phase.project, @phase) %></h4>
-<div id="proposals" class="clear">
-  <%= render partial: 'proposal', :collection => @phase.proposals, :as => :proposal %>
+<h4><%= link_to 'Ideas', project_phase_ideas_path(@phase.project, @phase) %></h4>
+<div id="ideas" class="clear">
+  <%= render partial: 'idea', :collection => @phase.ideas, :as => :idea %>
 </div>
-<% if can? :create, Proposal %>
-<div id="proposals" class="box">
-     <%= render 'proposals/form', :locals=>{:phase => @phase, :proposal => @proposal} %>
+<% if can? :create, Idea %>
+<div id="ideas" class="box">
+     <%= render 'ideas/form', :locals=>{:phase => @phase, :idea => @idea} %>
 </div>
 <% end %>
 <hr>

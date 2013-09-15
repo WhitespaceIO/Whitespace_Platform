@@ -1,0 +1,20 @@
+<h4><%= link_to 'Projects', projects_path %> |
+  <%= link_to @idea.phase.project.name, project_path(@idea.phase.project) %> |
+  <%= link_to 'Phases', project_phases_path(@idea.phase.project) %> |
+  <%= link_to @idea.phase.name, project_phase_path(@idea.phase.project, @idea.phase) %> |
+Proposal</h4>
+<p id="notice"><%= notice %></p>
+<hr>
+<div class="box clear"><%= @idea.text %></div>
+<div class="box clear"><%= @idea.user.display_name unless @idea.user.nil? %></div>
+<hr>
+<h4>Comments</h4>
+<div id="comments" class="clear">
+  <%= render partial: 'comments/comment', :collection => @idea.comments, :as => :comment %>
+</div>
+<% if can? :create, Comment %>
+<div class="box">
+  <%= render 'comments/form', :record => [@idea.phase.project, @idea.phase, @idea, @comment], :comment => @comment  %>
+</div>
+<% end %>
+<hr>

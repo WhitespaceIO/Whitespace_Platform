@@ -5,6 +5,6 @@ class Tag < ActiveRecord::Base
 
   has_many :projects, :through => :taggings, :source => :taggable, :source_type => 'Project'
   has_many :phases, :through => :taggings, :source => :taggable, :source_type => 'Phase'
-  has_many :proposals, :through => :taggings, :source => :taggable, :source_type => 'Proposal'
+  has_many :ideas, :through => :taggings, :source => :taggable, :source_type => 'Idea'
 
 end

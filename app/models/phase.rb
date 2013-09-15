@@ -3,7 +3,7 @@ class Phase < ActiveRecord::Base
 
   belongs_to :project
 
-  has_many :proposals
+  has_many :ideas
   has_many :comments, as: :commentable
   has_many :taggings, :as => :taggable
   has_many :tags, :through => :taggings

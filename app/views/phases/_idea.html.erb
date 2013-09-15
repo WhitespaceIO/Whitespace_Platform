@@ -1,0 +1,4 @@
+<div class="box idea">
+  <span class="idea-text"><%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %></span>
+  <span class="idea-user"><%= idea.user.display_name unless idea.user.nil? %></span>
+</div>

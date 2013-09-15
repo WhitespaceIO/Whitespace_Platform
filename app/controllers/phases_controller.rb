@@ -9,7 +9,7 @@ class PhasesController < ApplicationController
   end
 
   def show
-    @proposal = Proposal.new
+    @idea = Idea.new
     @comment = Comment.new
     @resource = Resource.new
     respond_with @phase

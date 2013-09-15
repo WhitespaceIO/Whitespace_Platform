@@ -1,6 +1,6 @@
-class CreateProposals < ActiveRecord::Migration
+class CreateIdeas < ActiveRecord::Migration
   def change
-    create_table :proposals do |t|
+    create_table :ideas do |t|
       t.string :text
       t.belongs_to :user
       t.belongs_to :phase

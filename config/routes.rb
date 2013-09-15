@@ -3,7 +3,7 @@ Whitespace::Application.routes.draw do
   devise_for :users
   resources :users do
     resources :comments
-    resources :proposals
+    resources :ideas
     resources :resources
   end
 
@@ -11,7 +11,7 @@ Whitespace::Application.routes.draw do
     resources :phases do
       resources :comments
       resources :resources
-      resources :proposals do
+      resources :ideas do
         resources :comments
       end
     end

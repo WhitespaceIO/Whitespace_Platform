@@ -7,7 +7,7 @@ class Ability
       Rails.logger.debug "ADMIN #{user.email}"
       can :manage, Project
       can :manage, Phase
-      can :manage, Proposal
+      can :manage, Idea
       can :manage, User
       can :manage, Comment
       can :manage, Resource
@@ -16,8 +16,8 @@ class Ability
       can :create, Project
       can :read, Project
       can :read, Phase
-      can :create, Proposal
-      can :manage, Proposal do |u|
+      can :create, Idea
+      can :manage, Idea do |u|
         u == user
       end
       can :create, Resource
@@ -31,7 +31,7 @@ class Ability
       Rails.logger.debug "GUEST #{user.email}"
       can :read, Project
       can :read, Phase
-      can :read, Proposal
+      can :read, Idea
       can :read, Comment
       can :read, User
       can :read, Resource
