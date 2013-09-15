@@ -8,6 +8,8 @@ class Phase < ActiveRecord::Base
   has_many :taggings, :as => :taggable
   has_many :tags, :through => :taggings
 
+  has_and_belongs_to_many :resources
+
   validates :name, presence: true
 
   state_machine :initial => :pending do

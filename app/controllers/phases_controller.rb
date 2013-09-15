@@ -11,6 +11,7 @@ class PhasesController < ApplicationController
   def show
     @proposal = Proposal.new
     @comment = Comment.new
+    @resource = Resource.new
     respond_with @phase
   end
 

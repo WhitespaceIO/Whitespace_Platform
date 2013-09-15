@@ -7,8 +7,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :role, :firstname, :lastname, :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  attr_accessible :role, :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
+
+  has_many :comments, :as => :commentable
+  has_many :resources, :as => :resourceable
 
   make_voter
 
@@ -21,10 +23,10 @@ class User < ActiveRecord::Base
 
   def to_param
     [id].join("-")
-    #[id, firstname.parameterize, lastname.parameterize].join("-")
+    #[id, first_name.parameterize, last_name.parameterize].join("-")
   end
 
   def display_name()
-    "#{self.firstname} #{self.lastname}".strip
+    "#{self.first_name} #{self.last_name}".strip
   end
 end

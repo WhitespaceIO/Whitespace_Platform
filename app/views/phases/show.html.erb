@@ -10,17 +10,27 @@
 <% end %>
 <hr>
 <h4><%= link_to 'Proposals', project_phase_proposals_path(@phase.project, @phase) %></h4>
-<div class="proposals clear">
+<div id="proposals" class="clear">
   <%= render partial: 'proposal', :collection => @phase.proposals, :as => :proposal %>
 </div>
 <% if can? :create, Proposal %>
-<div class="box">
+<div id="proposals" class="box">
      <%= render 'proposals/form', :locals=>{:phase => @phase, :proposal => @proposal} %>
 </div>
 <% end %>
 <hr>
+<h4>Resources</h4>
+<div id="resources" class="clear">
+  <%= render partial: 'resources/resource', :collection => @phase.resources, :as => :resource %>
+</div>
+<% if can? :create, Resource %>
+     <div class="box">
+       <%= render 'resources/form', :phase => @phase, :resource => @resource  %>
+     </div>
+<% end %>
+<hr>
 <h4>Comments</h4>
-<div class="comments clear">
+<div id="comments" class="clear">
   <%= render partial: 'comments/comment', :collection => @phase.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>

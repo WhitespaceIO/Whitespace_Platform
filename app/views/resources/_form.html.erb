@@ -1,0 +1,13 @@
+<%= form_for [@phase.project, @phase, @resource], :remote => true, :html => {id: 'resource-form', :class => 'form-inline'}  do |f| %>
+     <% if @resource.errors.any? %>
+       <ul class="errors">
+         <% @resource.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+         <% end %>
+       </ul>
+     <% end %>
+     <%= f.text_field :name, {:placeholder => 'Name'} %>
+     <%= f.text_field :url, {:placeholder => 'URL'} %>
+     <%= f.select :type, [Article.name, Document.name, Tutorial.name, Software.name, Hardware.name] %>
+     <%= f.submit 'Add', :class => 'btn' %>
+<% end %>

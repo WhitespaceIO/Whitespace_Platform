@@ -10,6 +10,7 @@ class Ability
       can :manage, Proposal
       can :manage, User
       can :manage, Comment
+      can :manage, Resource
     elsif user.role? :user
       Rails.logger.debug "USER #{user.email}"
       can :create, Project
@@ -17,6 +18,10 @@ class Ability
       can :read, Phase
       can :create, Proposal
       can :manage, Proposal do |u|
+        u == user
+      end
+      can :create, Resource
+      can :manage, Resource do |u|
         u == user
       end
       can :manage, Comment do |u|
@@ -29,6 +34,7 @@ class Ability
       can :read, Proposal
       can :read, Comment
       can :read, User
+      can :read, Resource
     end
   end
 end

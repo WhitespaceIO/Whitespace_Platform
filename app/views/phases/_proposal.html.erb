@@ -1,3 +1,4 @@
 <div class="box proposal">
-  <div class="proposal-text"><%= link_to proposal.text, project_phase_proposal_path(proposal.phase.project, proposal.phase, proposal) %></div>
+  <span class="proposal-text"><%= link_to proposal.text, project_phase_proposal_path(proposal.phase.project, proposal.phase, proposal) %></span>
+  <span class="proposal-user"><%= proposal.user.display_name unless proposal.user.nil? %></span>
 </div>

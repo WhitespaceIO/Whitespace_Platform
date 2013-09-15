@@ -30,6 +30,6 @@ votebecause = Project.create(name: 'I Vote Because', description: 'Pro-democracy
 votebecause.tags.create(name: 'election')
 votebecause.comments.create(text: 'Thanks for I Vote Because :)')
 
-User.create(:email => 'guest@whitespace.io', :password => 'password', :firstname => 'Guest', :lastname => 'Guest', :role => 'guest')
-User.create(:email => 'user@whitespace.io', :password => 'password', :firstname => 'User', :lastname => 'User', :role => 'user')
-User.create(:email => 'admin@whitespace.io', :password => 'password', :firstname => 'Admin', :lastname => 'Admin', :role => 'admin')
+User.create(:email => 'guest@whitespace.io', :password => 'password', :first_name => 'Guest', :last_name => 'Guest', :role => 'guest')
+User.create(:email => 'user@whitespace.io', :password => 'password', :first_name => 'User', :last_name => 'User', :role => 'user')
+User.create(:email => 'admin@whitespace.io', :password => 'password', :first_name => 'Admin', :last_name => 'Admin', :role => 'admin')

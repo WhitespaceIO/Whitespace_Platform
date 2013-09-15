@@ -1,0 +1,5 @@
+$resources = $('#resources');
+$resources.append('<%=j render partial: 'resources/resource', object: @resource %>');
+$form = $('resource-form');
+$inputs = $('#resource-form').find('input').not(':button, :submit, :reset, :hidden');
+$inputs.val('').removeAttr('checked').removeAttr('selected');

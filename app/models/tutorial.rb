@@ -1,0 +1,3 @@
+class Tutorial < Resource
+
+end

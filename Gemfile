@@ -9,6 +9,7 @@ gem 'devise'
 gem 'cancan'
 gem 'make_voteable'
 gem 'state_machine'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'pg'

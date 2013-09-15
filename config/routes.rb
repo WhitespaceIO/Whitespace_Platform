@@ -1,11 +1,16 @@
 Whitespace::Application.routes.draw do
 
   devise_for :users
-  resources :users
+  resources :users do
+    resources :comments
+    resources :proposals
+    resources :resources
+  end
 
   resources :projects do
     resources :phases do
       resources :comments
+      resources :resources
       resources :proposals do
         resources :comments
       end

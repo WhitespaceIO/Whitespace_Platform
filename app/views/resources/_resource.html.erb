@@ -1,0 +1,7 @@
+<% unless resource.nil? %>
+<div class="box rounded resource">
+  <span class="resource-name"><%= resource.name unless resource.nil? %></span>
+  <span class="resource-type"><%= "(#{resource.type})" unless resource.nil? %></span>
+  <span class="resource-url"><%= link_to resource.url, resource.url unless resource.nil? %></span>
+</div>
+<% end %>

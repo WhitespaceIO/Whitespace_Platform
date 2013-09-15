@@ -7,12 +7,12 @@
 <% end %>
 <hr>
 <h4><%= link_to 'Phases', project_phases_path(@project) %></h4>
-<div class="phases clear">
+<div id="phases" class="clear">
   <%= render partial: 'phase', :collection => @project.phases, :as => :phase %>
 </div>
 <hr>
 <h4><%= link_to 'Comments', project_comments_path(@project) %></h4>
-<div class="comments clear">
+<div id="comments" class="clear">
   <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>

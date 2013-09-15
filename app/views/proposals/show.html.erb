@@ -6,9 +6,10 @@ Proposal</h4>
 <p id="notice"><%= notice %></p>
 <hr>
 <div class="box proposal clear"><%= @proposal.text %></div>
+<div class="box proposal clear"><%= @proposal.user.display_name unless @proposal.user.nil? %></div>
 <hr>
 <h4>Comments</h4>
-<div class="comments clear">
+<div id="comments" class="clear">
   <%= render partial: 'comments/comment', :collection => @proposal.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>

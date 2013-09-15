@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130908195034) do
+ActiveRecord::Schema.define(:version => 20130914195026) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(:version => 20130908195034) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "phases_resources", :id => false, :force => true do |t|
+    t.integer "phase_id"
+    t.integer "resource_id"
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -51,6 +56,17 @@ ActiveRecord::Schema.define(:version => 20130908195034) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "resources", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "type"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "resources", ["user_id"], :name => "index_resources_on_user_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -75,8 +91,8 @@ ActiveRecord::Schema.define(:version => 20130908195034) do
   add_index "tags", ["taggable_id", "taggable_type"], :name => "index_tags_on_taggable_id_and_taggable_type"
 
   create_table "users", :force => true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"

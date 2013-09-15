@@ -26,7 +26,7 @@ class ProposalsController < ApplicationController
 
   def create
     logger.info "Params #{params.inspect}"
-    @proposal = @phase.proposals.create (params[:proposal])
+    @proposal = @phase.proposals.create (params[:proposal].merge(user: current_user))
     respond_with_proposals :created,
                            @proposal,
                            project_phase_path(@proposal.phase.project, @proposal.phase),

@@ -1,21 +1,17 @@
 (function () {
-    var errors = <%= raw @comment.errors.full_messages %>,
-        html = "<%=j render partial: 'comments/comment', object: @comment %>",
-        $textBox = $('#new_comment').find('textarea'),
-        $textBoxContainer = $textBox.parents('.control-group');
-
-    $('.alert').remove();
-
-    if (errors.length) {
-        $textBoxContainer.addClass('error');
-        $.each(errors, function (i, m) {
-            $('#new_comment').prepend('<div class="alert alert-error"><strong>Error!</strong> ' + m + '</div>');
-        });
-    } else {
-        $('.comments').append(html);
-        $textBoxContainer.removeClass('error');
-        $textBox.val('');
-    }
-
-    $textBox.focus();
+     var errors = <%= raw @comment.errors.full_messages %>,
+         html = "<%=j render partial: 'comments/comment', object: @comment %>",
+         $form = $('#comment-form'),
+         $comments = $('#comments'),
+         $textarea = $form.find('textarea');
+     $('.alert').remove();
+     if (errors.length) {
+          $.each(errors, function (i, m) {
+               $form.append('<div class="alert alert-error"><strong>Error!</strong> ' + m + '</div>');
+          });
+     } else {
+          $comments.append(html);
+          $textarea.val('');
+     }
+     $textarea.focus();
 })();

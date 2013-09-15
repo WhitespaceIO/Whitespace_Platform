@@ -1,16 +1,11 @@
-<div class="proposal-form">
-  <%= form_for([@phase.project, @phase, @proposal]) do |f| %>
-       <% if @proposal.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
-              <ul>
-                <% @proposal.errors.full_messages.each do |msg| %>
-                     <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-       <% end %>
-       <%= f.text_field :text, {:placeholder => 'Enter proposal'} %>
-       <%= f.submit %>
+<%= form_for [@phase.project, @phase, @proposal], :html => {id: 'proposal-form', :class => 'form-inline'} do |f| %>
+  <% if @proposal.errors.any? %>
+       <ul class="errors">
+         <% @proposal.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+         <% end %>
+       </ul>
   <% end %>
-</div>
+     <%= f.text_area :text, {:placeholder => 'Proposal', :rows => 1} %>
+  <%= f.submit 'Submit', :class => 'btn' %>
+<% end %>
