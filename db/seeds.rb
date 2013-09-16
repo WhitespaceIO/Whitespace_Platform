@@ -34,6 +34,10 @@ member = Member.new(:email => 'member@whitespace.io', :password => 'password', :
 member.skip_confirmation!
 member.save
 
+user = Member.new(:email => 'user@whitespace.io', :password => 'password', :first_name => User.name, :last_name => '')
+user.skip_confirmation!
+user.save
+
 admin = Admin.new(:email => 'admin@whitespace.io', :password => 'password', :first_name => Admin.name, :last_name => '')
 admin.skip_confirmation!
 admin.save
