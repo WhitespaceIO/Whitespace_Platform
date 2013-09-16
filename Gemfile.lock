@@ -70,8 +70,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    make_voteable (0.1.1)
-      activerecord (~> 3.0)
     mime-types (1.25)
     multi_json (1.8.0)
     orm_adapter (0.4.0)
@@ -115,12 +113,16 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.8)
     state_machine (1.2.0)
+    statistics2 (0.54)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.18.1)
     thread_safe (0.1.2)
       atomic
+    thumbs_up (0.6.7)
+      activerecord
+      statistics2
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
@@ -148,12 +150,12 @@ DEPENDENCIES
   font-awesome-rails
   jquery-rails
   less-rails
-  make_voteable
   pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
   state_machine
   therubyracer
+  thumbs_up
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

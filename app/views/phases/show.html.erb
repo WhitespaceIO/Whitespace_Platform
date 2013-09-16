@@ -10,7 +10,7 @@
 <% end %>
 <hr>
 <h4><%= link_to 'Ideas', project_phase_ideas_path(@phase.project, @phase) %></h4>
-<div id="ideas" class="clear">
+<div id="ideas">
   <%= render partial: 'idea', :collection => @phase.ideas, :as => :idea %>
 </div>
 <% if can? :create, Idea %>
@@ -20,7 +20,7 @@
 <% end %>
 <hr>
 <h4>Resources</h4>
-<div id="resources" class="clear">
+<div id="resources">
   <%= render partial: 'resources/resource', :collection => @phase.resources, :as => :resource %>
 </div>
 <% if can? :create, Resource %>
@@ -30,7 +30,7 @@
 <% end %>
 <hr>
 <h4>Comments</h4>
-<div id="comments" class="clear">
+<div id="comments">
   <%= render partial: 'comments/comment', :collection => @phase.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>

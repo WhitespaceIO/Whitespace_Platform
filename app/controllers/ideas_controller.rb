@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
   before_filter :find_project, :only => [:index, :create]
   before_filter :find_phase, :only => [:index, :create]
+  before_filter :find_idea, :only => [:show, :edit, :update, :destroy, :vote_up, :vote_down]
 
   def index
     @ideas = @phase.ideas
@@ -8,7 +9,6 @@ class IdeasController < ApplicationController
   end
 
   def show
-    @idea = Idea.find(params[:id])
     @comment = Comment.new
     respond_with_ideas :ok, @idea
   end
@@ -20,7 +20,6 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    @idea = Idea.find(params[:id])
     respond_with_ideas :ok, @idea
   end
 
@@ -34,15 +33,23 @@ class IdeasController < ApplicationController
   end
 
   def update
-    @idea = Idea.find(params[:id])
     @idea.update_attributes!(params[:idea])
     respond_with_ideas :created, @idea, nil, 'Proposal was successfully updated.'
   end
 
   def destroy
-    @idea = Idea.find(params[:id])
     @idea.destroy
     respond_with_nothing :no_content
+  end
+
+  def vote_up
+    current_user.vote_for(@idea)
+    respond_with_ideas :ok, @idea
+  end
+
+  def vote_down
+    current_user.vote_against(@idea)
+    respond_with_ideas :ok, @idea
   end
 
   private
@@ -53,6 +60,10 @@ class IdeasController < ApplicationController
 
   def find_phase
     @phase = Phase.find(params[:phase_id])
+  end
+
+  def find_idea
+    @idea = Idea.find(params[:id])
   end
 
   def respond_with_ideas(status, ideas, location = nil, notice = nil)

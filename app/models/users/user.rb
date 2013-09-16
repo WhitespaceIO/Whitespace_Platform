@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :resources
 
-  make_voter
+  acts_as_voter
+  acts_as_voteable
 
   def to_param
     params = [id]

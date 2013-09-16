@@ -1,0 +1,7 @@
+<div class="box idea">
+  <span class="idea-text"><%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %></span>
+  <span class="idea-user"><%= idea.user.display_name unless idea.user.nil? %></span>
+  <span class="idea-votes"><%= idea.votes_for == 1 ? '1 vote' : "#{idea.votes_for} votes" %></span>
+  <span class="idea-vote-up"><%= link_to('+', vote_up_project_phase_idea_path (idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></span>
+  <span class="idea-vote-down"><%= link_to('-', vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></span>
+</div>

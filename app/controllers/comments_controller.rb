@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :find_comment, :only => [:vote_up, :vote_down]
   before_filter :find_project, :only => [:create]
   before_filter :find_phase, :only => [:create]
   before_filter :find_idea, :only => [:create]
@@ -27,7 +28,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def vote_up
+    current_user.vote_for(@comment)
+    respond_with_comments :ok, @comment
+  end
+
+  def vote_down
+    current_user.vote_against(@comment)
+    respond_with_comments :ok, @comment
+  end
+
   private
+
+  def find_comment
+    @comment = Comment.find(params[:id])
+  end
 
   def find_project
     @project = Project.find(params[:project_id]) if params.has_key? :project_id

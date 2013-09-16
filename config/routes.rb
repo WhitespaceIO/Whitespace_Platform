@@ -1,6 +1,8 @@
 Whitespace::Application.routes.draw do
 
-  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup'}
+  devise_for :users, :path_names => { :sign_in => 'login',
+                                      :sign_out => 'logout',
+                                      :sign_up => 'signup'}
 
   resources :users do
     resources :comments
@@ -13,10 +15,35 @@ Whitespace::Application.routes.draw do
       resources :comments
       resources :resources
       resources :ideas do
+        member do
+          post :vote_up
+          post :vote_down
+        end
         resources :comments
       end
     end
     resources :comments
+  end
+
+  resources :ideas do
+    member do
+      post :vote_up
+      post :vote_down
+    end
+  end
+
+  resources :comments do
+    member do
+      post :vote_up
+      post :vote_down
+    end
+  end
+
+  resources :resources do
+    member do
+      post :vote_up
+      post :vote_down
+    end
   end
 
   match 'about', :to => 'pages#about'

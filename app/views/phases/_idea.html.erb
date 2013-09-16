@@ -1,4 +1,13 @@
-<div class="box idea">
+<div id="idea_<%= idea.id %>" class="box idea">
   <span class="idea-text"><%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %></span>
   <span class="idea-user"><%= idea.user.display_name unless idea.user.nil? %></span>
+  <span class="idea-votes"><%= "(#{idea.plusminus})" %></span>
+  <span class="idea-vote-up"><%=
+      if user_signed_in? && !current_user.voted_on?(idea) && idea.user != current_user
+        link_to('+', vote_up_idea_path(idea), :remote => true, :method => :post)
+      end %></span>
+  <span class="idea-vote-down"><%=
+     if user_signed_in? && !current_user.voted_on?(idea) && idea.user != current_user
+        link_to('-', vote_down_idea_path(idea), :remote => true, :method => :post)
+      end %></span>
 </div>

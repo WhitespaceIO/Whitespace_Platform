@@ -1,0 +1,7 @@
+$comment = $('<%= "#comment_#{@comment.id}" %>');
+$votes = $comment.find('.comment-votes');
+$vote_up = $comment.find('.comment-vote-up');
+$vote_down = $comment.find('.comment-vote-down');
+$votes.text('(<%= @comment.plusminus %>)');
+$vote_up.empty();
+$vote_down.empty();

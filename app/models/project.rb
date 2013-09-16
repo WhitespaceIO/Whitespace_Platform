@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
 
   validates :name, presence: true
 
-  make_voteable
+  acts_as_voteable
 
   def to_param
     [id, name.parameterize].join("-")

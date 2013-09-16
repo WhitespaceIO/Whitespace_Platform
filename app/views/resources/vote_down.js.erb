@@ -1,0 +1,7 @@
+$resource = $('<%= "#resource_#{@resource.id}" %>');
+$votes = $resource.find('.resource-votes');
+$vote_up = $resource.find('.resource-vote-up');
+$vote_down = $resource.find('.resource-vote-down');
+$votes.text('(<%= @resource.plusminus %>)');
+$vote_up.empty();
+$vote_down.empty();

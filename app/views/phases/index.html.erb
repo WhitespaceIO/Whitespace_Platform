@@ -1,16 +1,16 @@
 <h4><%= link_to 'Projects', projects_path %> |
     <%= link_to @project.name, project_path(@project) %> | Phases</h4>
 <hr>
-<div class="phases clear">
+<div id="phases">
   <%= render partial: 'phase', :collection => @phases, :as => :phase %>
 </div>
 <hr>
 <h4>Comments</h4>
-<div class="comments clear">
+<div id="comments">
   <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
 </div>
 <div class="box">
-  <%= render 'projects/comment_form', :locals=>{:project => @project, :comment => @comment} %>
+  <%= render 'comments/form', :record => [@project, @comment], :locals=>{:project => @project, :comment => @comment} %>
 </div>
 <hr>
 

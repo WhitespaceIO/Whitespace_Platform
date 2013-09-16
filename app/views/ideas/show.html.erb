@@ -5,11 +5,13 @@
 Proposal</h4>
 <p id="notice"><%= notice %></p>
 <hr>
-<div class="box clear"><%= @idea.text %></div>
-<div class="box clear"><%= @idea.user.display_name unless @idea.user.nil? %></div>
+<div class="box"><%= @idea.text %></div>
+<div class="box">by <%= @idea.user.display_name unless @idea.user.nil? %></div>
+<div class="box"><%= @idea.plusminus %> votes</div>
+<div class="box">on <%= @idea.created_at.strftime('%l:%M%P on %B %d, %Y') %></div>
 <hr>
 <h4>Comments</h4>
-<div id="comments" class="clear">
+<div id="comments">
   <%= render partial: 'comments/comment', :collection => @idea.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>

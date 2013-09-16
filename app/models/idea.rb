@@ -8,7 +8,6 @@ class Idea < ActiveRecord::Base
   has_many :taggings, :as => :taggable
   has_many :tags, :through => :taggings
 
-  make_voteable
-
+  acts_as_voteable
 
 end
