@@ -3,16 +3,23 @@ class User < ActiveRecord::Base
 
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
 
-  make_voter
-
   has_many :comments
   has_many :resources
 
+  make_voter
+
   def to_param
-    [id, first_name.parameterize, last_name.parameterize].join('-')
+    params = [id]
+    if !first_name.blank?
+      params.push first_name.parameterize
+    elsif !last_name.blank?
+      params.push last_name.parameterize
+    end
+    params.join('-')
   end
 
   def display_name
     "#{self.first_name} #{self.last_name}".strip
   end
+
 end

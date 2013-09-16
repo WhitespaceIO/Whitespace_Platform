@@ -3,7 +3,7 @@
   <%= link_to 'New User', new_user_path, {class: 'btn'}  %>
 </div>
 <hr>
-<div class="users clear">
+<div id="users">
   <%= render partial: 'user_box', :collection => @users, :as => :user %>
 </div>
 <hr>

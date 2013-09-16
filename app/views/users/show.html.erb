@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
-<h3><%= @user.first_name %> <%= @user.last_name %></h3>
-<h4><%= @user.email %></h4>
+<h3><%= @user.display_name %></h3>
 <h4>Resources</h4>
-<div id="resources" class="clear">
+<div id="resources">
   <%= render partial: 'resources/resource', :collection => @user.resources, :as => :resource %>
 </div>
 <hr>
 <h4>Comments</h4>
-<div id="comments" class="clear">
+<div id="comments">
   <%= render partial: 'comments/comment', :collection => @user.comments, :as => :comment %>
 </div>
 <hr>
