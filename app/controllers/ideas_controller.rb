@@ -10,6 +10,7 @@ class IdeasController < ApplicationController
 
   def show
     @comment = Comment.new
+    logger.info "Idea #{@idea.comments}"
     respond_with_ideas :ok, @idea
   end
 

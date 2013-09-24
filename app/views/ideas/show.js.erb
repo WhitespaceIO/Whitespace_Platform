@@ -1,0 +1,3 @@
+$idea_comments = $('#idea-comments');
+$idea_comments.html('<%=j render partial: 'comments/comment', :collection => @idea.comments, :as => :comment %>');
+$idea_comments.siblings('.idea-more').remove();

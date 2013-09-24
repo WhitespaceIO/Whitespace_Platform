@@ -11,6 +11,7 @@
 <ul id="phases" class="list-inline">
   <%= render partial: 'phase', :collection => @project.phases, :as => :phase %>
 </ul>
+<div id='phase-partial'></div>
 <hr>
 <h4><%= link_to 'Comments', project_comments_path(@project) %></h4>
 <div id="comments" class="clear">

@@ -15,6 +15,7 @@ Whitespace::Application.routes.draw do
       resources :comments
       resources :resources
       resources :ideas do
+        resources :comments
         member do
           post :vote_up
           post :vote_down
@@ -26,6 +27,7 @@ Whitespace::Application.routes.draw do
   end
 
   resources :ideas do
+    resources :comments
     member do
       post :vote_up
       post :vote_down
