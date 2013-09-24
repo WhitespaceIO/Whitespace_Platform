@@ -10,9 +10,7 @@ gem 'thumbs_up'
 gem 'state_machine'
 gem 'font-awesome-rails'
 gem 'figaro'
-git 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3' do
-  gem 'twitter-bootstrap-rails'
-end
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
 group :production do
   gem 'pg'
