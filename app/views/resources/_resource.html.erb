@@ -1,5 +1,5 @@
 <% unless resource.nil? %>
-<div id="<%= "resource_#{resource.id}"%>" class="box rounded resource">
+<div id="<%= "resource_#{resource.id}"%>" class="well well-sm resource">
   <span class="resource-name"><%= resource.name unless resource.nil? %></span>
   <span class="resource-description"><%= resource.description unless resource.nil? %></span>
   <span class="resource-type"><%= "(#{resource.type})" unless resource.nil? %></span>

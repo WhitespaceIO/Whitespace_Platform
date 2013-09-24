@@ -9,7 +9,7 @@
 <div id="comments">
   <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
 </div>
-<div class="box">
+<div class="well well-sm">
   <%= render 'comments/form', :record => [@project, @comment], :locals=>{:project => @project, :comment => @comment} %>
 </div>
 <hr>

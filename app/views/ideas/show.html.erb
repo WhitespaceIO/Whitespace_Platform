@@ -5,17 +5,17 @@
 Proposal</h4>
 <p id="notice"><%= notice %></p>
 <hr>
-<div class="box"><%= @idea.text %></div>
-<div class="box">by <%= @idea.user.display_name unless @idea.user.nil? %></div>
-<div class="box"><%= @idea.plusminus %> votes</div>
-<div class="box">on <%= @idea.created_at.strftime('%l:%M%P on %B %d, %Y') %></div>
+<div class="well well-sm"><%= @idea.text %></div>
+<div class="well well-sm">by <%= @idea.user.display_name unless @idea.user.nil? %></div>
+<div class="well well-sm"><%= @idea.plusminus %> votes</div>
+<div class="well well-sm">on <%= @idea.created_at.strftime('%l:%M%P on %B %d, %Y') %></div>
 <hr>
 <h4>Comments</h4>
 <div id="comments">
   <%= render partial: 'comments/comment', :collection => @idea.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>
-<div class="box">
+<div class="well well-sm">
   <%= render 'comments/form', :record => [@idea.phase.project, @idea.phase, @idea, @comment], :comment => @comment  %>
 </div>
 <% end %>

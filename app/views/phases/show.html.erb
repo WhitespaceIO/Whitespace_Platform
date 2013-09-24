@@ -14,7 +14,7 @@
   <%= render partial: 'idea', :collection => @phase.ideas, :as => :idea %>
 </div>
 <% if can? :create, Idea %>
-<div id="ideas" class="box">
+<div id="ideas" class="well well-sm">
      <%= render 'ideas/form', :locals=>{:phase => @phase, :idea => @idea} %>
 </div>
 <% end %>
@@ -24,7 +24,7 @@
   <%= render partial: 'resources/resource', :collection => @phase.resources, :as => :resource %>
 </div>
 <% if can? :create, Resource %>
-     <div class="box">
+     <div class="well well-sm">
        <%= render 'resources/form', :phase => @phase, :resource => @resource  %>
      </div>
 <% end %>
@@ -34,7 +34,7 @@
   <%= render partial: 'comments/comment', :collection => @phase.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>
-<div class="box">
+<div class="well well-sm">
   <%= render 'comments/form', :record => [@phase.project, @phase, @comment], :comment => @comment  %>
 </div>
 <% end %>

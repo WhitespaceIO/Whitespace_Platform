@@ -10,5 +10,5 @@
      <%= f.text_field :url, {:placeholder => 'URL'} %>
      <%= f.text_area :description, {:placeholder => 'Description', :rows => 1} %>
      <%= f.select :type, [Article.name, Document.name, Tutorial.name, Software.name, Hardware.name, Website.name] %>
-     <%= f.submit 'Add', :class => 'btn' %>
+     <%= f.submit 'Add', :class => 'btn btn-default' %>
 <% end %>

@@ -6,7 +6,7 @@
 <hr>
 <div id="ideas" class="clear">
   <% @ideas.each do |idea| %>
-       <div class="box rounded idea">
+       <div class="well well-sm idea">
          <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
        </div>
   <% end %>
