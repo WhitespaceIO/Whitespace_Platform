@@ -45,12 +45,12 @@ class IdeasController < ApplicationController
 
   def vote_up
     current_user.vote_for(@idea)
-    respond_with_ideas :ok, @idea
+    respond_with_ideas :accepted, @idea, nil, 'Idea voted up.', 'ideas/vote'
   end
 
   def vote_down
     current_user.vote_against(@idea)
-    respond_with_ideas :ok, @idea
+    respond_with_ideas :accepted, @idea, nil, 'Idea voted down.', 'ideas/vote'
   end
 
   private
@@ -67,11 +67,12 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
   end
 
-  def respond_with_ideas(status, ideas, location = nil, notice = nil)
+  def respond_with_ideas(status, ideas, location = nil, notice = nil, template = nil)
     respond_with ideas,
                  status: status,
                  location: location,
-                 notice: notice
+                 notice: notice,
+                 template: template
   end
 
 end

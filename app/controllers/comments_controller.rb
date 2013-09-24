@@ -30,12 +30,12 @@ class CommentsController < ApplicationController
 
   def vote_up
     current_user.vote_for(@comment)
-    respond_with_comments :ok, @comment
+    respond_with_comments :accepted, @comment, nil, 'Comment voted up.', 'comments/vote'
   end
 
   def vote_down
     current_user.vote_against(@comment)
-    respond_with_comments :ok, @comment
+    respond_with_comments :accepted, @comment, nil, 'Comment voted down.', 'comments/vote'
   end
 
   private
@@ -56,10 +56,11 @@ class CommentsController < ApplicationController
     @idea = Idea.find(params[:idea_id]) if params.has_key? :idea_id
   end
 
-  def respond_with_comments(status, comments, location = nil, notice = nil)
+  def respond_with_comments(status, comments, location = nil, notice = nil, template = nil)
     respond_with comments,
                  status: status,
                  location: location,
-                 notice: notice
+                 notice: notice,
+                 template: template
   end
 end

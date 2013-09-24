@@ -12,12 +12,12 @@ class ResourcesController < ApplicationController
 
   def vote_up
     current_user.vote_for(@resource)
-    respond_with_resources :ok, @resource
+    respond_with_resources :accepted, @resource, nil, 'Resource voted up.', 'resources/vote'
   end
 
   def vote_down
     current_user.vote_against(@resource)
-    respond_with_resources :ok, @resource
+    respond_with_resources :accepted, @resource, nil, 'Resource voted down.', 'resources/vote'
   end
 
   private
@@ -30,11 +30,12 @@ class ResourcesController < ApplicationController
     @phase = Phase.find(params[:phase_id])
   end
 
-  def respond_with_resources(status, resources, location = nil, notice = nil)
+  def respond_with_resources(status, resources, location = nil, notice = nil, template = nil)
     respond_with resources,
                  status: status,
                  location: location,
-                 notice: notice
+                 notice: notice,
+                 template: template
   end
 
 end
