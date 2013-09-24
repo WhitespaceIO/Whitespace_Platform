@@ -1,3 +1,4 @@
+# Projects
 yxevotes = Project.create(name: 'YXE Votes', description: 'A social platform for the Saskatoon 2012 Civic Election sharing candidates and ward information.')
 yxevotes.tags.create(name: 'election')
 yxevotes.tags.create(name: 'civic')
@@ -30,6 +31,7 @@ votebecause = Project.create(name: 'I Vote Because', description: 'Pro-democracy
 votebecause.tags.create(name: 'election')
 votebecause.comments.create(text: 'Thanks for I Vote Because :)')
 
+# Members
 member = Member.new(:email => 'member@whitespace.io', :password => 'password', :first_name => Member.name, :last_name => '')
 member.skip_confirmation!
 member.save
