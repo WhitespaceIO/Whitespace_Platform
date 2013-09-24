@@ -7,5 +7,9 @@
           </ul>
      <% end %>
      <%= f.text_area :text, {:placeholder => 'Comment', :rows => 1} %>
+     <%= f.label :private do %>
+          <%= f.check_box :private %>
+          Private?
+     <% end %>
      <%= f.submit 'Submit', :class => 'btn' %>
 <% end %>

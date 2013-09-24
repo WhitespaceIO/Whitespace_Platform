@@ -1,3 +1,4 @@
+<% if user_signed_in? || comment.private == false %>
 <div id="<%= "comment_#{comment.id}"%>" class="box rounded comment">
   <span class="comment-text">"<%= comment.text %>"</span>
   <span class="comment-user"> - <%= comment.user.nil? ? "Anonymous" : comment.user.display_name %></span>
@@ -12,3 +13,4 @@
         link_to('-', vote_down_comment_path(comment), :remote => true, :method => :post)
       end %></span>
 </div>
+<% end %>

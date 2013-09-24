@@ -1,0 +1,3 @@
+class Website < Resource
+
+end

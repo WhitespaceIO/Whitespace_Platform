@@ -2,6 +2,7 @@ class CreateComments < ActiveRecord::Migration
   def self.up
     create_table :comments do |t|
       t.text :text
+      t.boolean :private
       t.belongs_to :commentable, :polymorphic => true
       t.belongs_to :user
       t.timestamps

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130916001517) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
+    t.boolean  "private"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"

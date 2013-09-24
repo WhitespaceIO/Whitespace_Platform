@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :text, :user
+  attr_accessible :text, :user, :private
 
   belongs_to :user
   belongs_to :commentable, :polymorphic => true
