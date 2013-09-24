@@ -4,13 +4,13 @@
 <%= render partial: 'projects/location', :collection => @project.locations, :as => :location %>
 <hr>
 <% @project.tags.each do |tag|%>
-     <span class="tag"><%= tag.name %></span>
+     <span class="tag label label-default"><%= tag.name %></span>
 <% end %>
 <hr>
 <h4><%= link_to 'Phases', project_phases_path(@project) %></h4>
-<div id="phases" class="clear">
+<ul id="phases" class="list-inline">
   <%= render partial: 'phase', :collection => @project.phases, :as => :phase %>
-</div>
+</ul>
 <hr>
 <h4><%= link_to 'Comments', project_comments_path(@project) %></h4>
 <div id="comments" class="clear">

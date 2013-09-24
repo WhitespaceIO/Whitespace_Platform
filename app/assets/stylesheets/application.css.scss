@@ -11,7 +11,13 @@
  *= require_self
  */
 body {
-  padding-top: 80px;
+  padding-top: 60px;
+}
+
+#whitespace-is {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #footer {
