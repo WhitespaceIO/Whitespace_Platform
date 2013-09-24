@@ -1,13 +1,16 @@
 yxevotes = Project.create(name: 'YXE Votes', description: 'A social platform for the Saskatoon 2012 Civic Election sharing candidates and ward information.')
+yxevotes.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada')
 yxevotes.tags.create(name: 'election')
 yxevotes.tags.create(name: 'civic')
 yxevotes.comments.create(text: 'Nice work on YXE Votes!')
 
 yxevoices = Project.create(name: 'YXE Voices', description: 'A civic engagement platform to promote the sharing and discussion of ideas on ways to improve our city.')
+yxevoices.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada')
 yxevoices.tags.create(name: 'civic')
 yxevoices.comments.create(:text => 'Nice work on YXE Voices!')
 
 pandobranches = Project.create(name: 'Pando Branches', description: 'Mapping the location of donated fruit trees to automate the workload for coordinating the harvest.')
+pandobranches.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada')
 pandobranches.comments.create(text: 'Nice work on Pando Branches!')
 
 storyproject = Project.create(name: 'Story Project', description: 'A story telling platform to share amazing life experiences that embraces the idea that everyone has a story to share.')
@@ -23,6 +26,8 @@ healthmap.tags.create(name: 'health')
 healthmap.comments.create(text: 'Nice work on Health Facility Map!')
 
 repurposedlabs = Project.create(name: 'Repurposed Labs', description: 'Bridging the digital divide by repurposing used computers into free internet access terminals for disadvantaged communities.')
+repurposedlabs.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada', name: 'White Buffalo', latitude: 52.126107, longitude: -106.674864)
+repurposedlabs.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada', name: 'CBYC', latitude: 52.125912, longitude: -106.678652)
 repurposedlabs.tags.create(name: 'community')
 repurposedlabs.comments.create(text: 'Thanks for Repurposed Labs!')
 

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h4><%= link_to 'Projects', projects_path %> | <%= @project.name %></h4>
 <h5><%= @project.description %></h5>
+<%= render partial: 'projects/location', :collection => @project.locations, :as => :location %>
 <hr>
 <% @project.tags.each do |tag|%>
      <span class="tag"><%= tag.name %></span>

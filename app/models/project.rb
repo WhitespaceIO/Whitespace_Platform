@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
   has_many :comments, dependent: :destroy, as: :commentable
   has_many :taggings, dependent: :destroy, :as => :taggable
   has_many :tags, :through => :taggings
+  has_many :locations
 
   validates :name, presence: true
 
