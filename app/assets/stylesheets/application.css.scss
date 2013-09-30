@@ -14,6 +14,15 @@ body {
   padding-top: 60px;
 }
 
+h3 > .badge {
+  vertical-align: middle;
+}
+
+.panel > h3.panel-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 #whitespace-is {
   max-width: 900px;
   margin-right: auto;
@@ -22,14 +31,7 @@ body {
 
 .add {
 }
-.project {
-  .project-name {
-    font-weight: bold;
-  }
-  .project-description {
 
-  }
-}
 .user {
   .user-name {
     font-weight:bold;

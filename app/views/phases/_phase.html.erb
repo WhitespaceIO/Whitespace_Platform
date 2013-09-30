@@ -1,7 +1,19 @@
-<div class="well well-sm phase">
-  <div class="phase-name"><%= link_to phase.name, project_phase_path(phase.project, phase) %></div>
-  <div class="phase-description"><%= phase.description %></div>
-  <div class="phase-ideas"><%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %></div>
-  <div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>
-  <div class="phase-resources"><%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %></div>
+<div class="phase panel panel-default">
+  <h3 class="panel-heading">
+    <span class="badge"><%= phase.ordinal %></span>
+    <span class="phase-name"><%= link_to phase.name, project_phase_path(phase.project, phase) %></span>
+     -
+    <% if phase.description %>
+        <span class="phase-description"><%= phase.description %></span>
+    <% else %>
+        <small class="phase-description">A solution has not yet been accepted.</small>
+    <% end %>
+  </h3>
+  <div class="panel-body">
+      <ol class="phase-ideas list-unstyled">
+        <%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %>
+      </ol>
+      <div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>
+      <div class="phase-resources"><%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %></div>
+  </div>
 </div>

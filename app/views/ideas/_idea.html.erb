@@ -1,9 +1,24 @@
-<div id="idea_<%= idea.id %>" class="well well-sm idea" data-id="<%= idea.id %>">
-  <span class="idea-text"><%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %></span>
+<li id="idea_<%= idea.id %>" class="idea" data-id="<%= idea.id %>">
+  <h4 class="idea-text">
+    <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
+    <small class="idea-votes">
+      <%= idea.votes_for == 1 ? '1 vote' : "#{idea.votes_for} votes" %>
+    </small>
+    <small class="idea-vote-up"><%= link_to('+', vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+    <small class="idea-vote-down"><%= link_to('-', vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+  </h4>
+
+  <ol id="idea-comments" class="list-unstyled">
+    <% idea.comments.each do |comment| %>
+    <li>
+      <h6>
+        <%= link_to comment.user.display_name, user_path(comment.user), :class => 'comment-author' %>
+        -
+        <span class="comment-text"><%= comment.text %></span>
+      </h6>
+    </li>
+    <% end %>
+  </ol>
   <span class="idea-user"><%= idea.user.display_name unless idea.user.nil? %></span>
-  <span class="idea-votes"><%= idea.votes_for == 1 ? '1 vote' : "#{idea.votes_for} votes" %></span>
-  <span class="idea-vote-up"><%= link_to('+', vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></span>
-  <span class="idea-vote-down"><%= link_to('-', vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></span>
   <span class="idea-more"><%= link_to '...', project_phase_idea_path(idea.phase.project, idea.phase, idea.id), :remote => true if idea.comments.count > 0 %></span>
-  <div id="idea-comments"></div>
-</div>
+</li>

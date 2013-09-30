@@ -32,7 +32,5 @@
   <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>
-<form class="well well-sm">
-  <%= render 'comments/form', :record => [@project, @comment], :comment => @comment %>
-</form>
+<form><%= render 'comments/form', :record => [@project, @comment], :comment => @comment %></form>
 <% end %>
