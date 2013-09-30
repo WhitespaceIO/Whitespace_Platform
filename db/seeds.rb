@@ -1,3 +1,29 @@
+# Members
+james = Member.new(:email => 'james@whitespace.io', :password => 'password', :first_name => 'James', :last_name => 'McNab')
+james.skip_confirmation!
+james.save
+
+sally = Member.new(:email => 'sally@whitespace.io', :password => 'password', :first_name => 'Sally', :last_name => 'Foghart')
+sally.skip_confirmation!
+sally.save
+
+tim = Member.new(:email => 'tim@whitespace.io', :password => 'password', :first_name => 'Tim', :last_name => 'Smith')
+tim.skip_confirmation!
+tim.save
+
+member = Member.new(:email => 'member@whitespace.io', :password => 'password', :first_name => Member.name, :last_name => '')
+member.skip_confirmation!
+member.save
+
+user = Member.new(:email => 'user@whitespace.io', :password => 'password', :first_name => User.name, :last_name => '')
+user.skip_confirmation!
+user.save
+
+admin = Admin.new(:email => 'admin@whitespace.io', :password => 'password', :first_name => Admin.name, :last_name => '')
+admin.skip_confirmation!
+admin.save
+
+
 # Projects
 yxevotes = Project.create(name: 'YXE Votes', description: 'A social platform for the Saskatoon 2012 Civic Election sharing candidates and ward information.')
 yxevotes.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada')
@@ -36,15 +62,43 @@ votebecause = Project.create(name: 'I Vote Because', description: 'Pro-democracy
 votebecause.tags.create(name: 'election')
 votebecause.comments.create(text: 'Thanks for I Vote Because :)')
 
-# Members
-member = Member.new(:email => 'member@whitespace.io', :password => 'password', :first_name => Member.name, :last_name => '')
-member.skip_confirmation!
-member.save
+# Whitespace dogfood project :)
+whitespace = Project.create(name: 'Whitespace Platform', description: 'A social platform to get people openly collaborating over projects they\'re  technically unable to tackle solo.')
+whitespace.locations.create(city: 'Saskatoon', state: 'Saskatchewan', country: 'Canada')
+whitespace.tags.create(name: 'social')
+whitespace.tags.create(name: 'better good')
+whitespace.tags.create(name: 'empowerment')
 
-user = Member.new(:email => 'user@whitespace.io', :password => 'password', :first_name => User.name, :last_name => '')
-user.skip_confirmation!
-user.save
+whitespace_problem_phase = Phase.find(73)
+whitespace_problem_phase.started_at = '2013-05-25'
+whitespace_problem_phase.completed_at = '2013-09-25'
+whitespace_problem_phase.state = :completed
+whitespace_problem_phase.save
 
-admin = Admin.new(:email => 'admin@whitespace.io', :password => 'password', :first_name => Admin.name, :last_name => '')
-admin.skip_confirmation!
-admin.save
+whitespace_solution_phase = Phase.find(74)
+whitespace_solution_phase.started_at = '2013-09-25'
+whitespace_solution_phase.state = :started
+whitespace_problem_phase.save
+
+weekly = whitespace_solution_phase.ideas.create(text: 'Weekly meetings and Facebook messenger')
+c = weekly.comments.create(text: 'We need some place to centrally organize info')
+c.user_id = 1
+c.save
+c = weekly.comments.create(text: 'We need to be able to collaborate with those in different locations')
+c.user_id = 2
+c.save
+
+gdrive = whitespace_solution_phase.ideas.create(text: 'Use Google Drive and Github')
+c = gdrive.comments.create(text: 'Google Drive is complicated')
+c.user_id = 3
+c.save
+c = gdrive.comments.create(text: 'Not all projects need a code repo!')
+c.user_id = 1
+
+online_platform = whitespace_solution_phase.ideas.create(text: 'Online web platform')
+c = online_platform.comments.create(text: 'This sounds like it might actually work!')
+c.user_id = 2
+c.save
+c = online_platform.comments.create(text: 'I love this!')
+c.user_id = 3
+c.save
