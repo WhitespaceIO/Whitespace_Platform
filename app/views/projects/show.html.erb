@@ -1,25 +1,38 @@
 <p id="notice"><%= notice %></p>
-<h4><%= link_to 'Projects', projects_path %> | <%= @project.name %></h4>
-<h5><%= @project.description %></h5>
-<%= render partial: 'projects/location', :collection => @project.locations, :as => :location %>
-<hr>
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li class="active"><%= @project.name %></li>
+</ol>
+
+<div class="page-header">
+  <h1><%= @project.name %></h1>
+  <p class="text-muted"><%= render partial: 'projects/location', :collection => @project.locations, :as => :location %></p>
+</div>
+
+<p class="lead"><%= @project.description %></p>
+
+<ul class="list-inline">
 <% @project.tags.each do |tag|%>
-     <span class="tag label label-default"><%= tag.name %></span>
+  <li><span class="tag label label-default"><%= tag.name %></span></li>
 <% end %>
-<hr>
-<h4><%= link_to 'Phases', project_phases_path(@project) %></h4>
-<ul id="phases" class="list-inline">
-  <%= render partial: 'phase', :collection => @project.phases, :as => :phase %>
 </ul>
+
+
+<ol id="phases">
+  <%= render partial: 'phase', :collection => @project.phases, :as => :phase %>
+</ol>
+
 <div id='phase-partial'></div>
+
 <hr>
-<h4><%= link_to 'Comments', project_comments_path(@project) %></h4>
-<div id="comments" class="clear">
+
+<div id="comments">
+  <h4>Comments</h4>
   <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>
-<div class="well well-sm">
+<form class="well well-sm">
   <%= render 'comments/form', :record => [@project, @comment], :comment => @comment %>
-</div>
+</form>
 <% end %>
-<hr>
