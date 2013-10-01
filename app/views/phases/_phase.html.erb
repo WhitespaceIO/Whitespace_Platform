@@ -6,7 +6,7 @@
     <% if phase.description %>
         <span class="phase-description"><%= phase.description %></span>
     <% else %>
-        <small class="phase-description">An idea has not yet been accepted.</small>
+        <small class="phase-description"></small>
     <% end %>
   </h3>
   <div class="panel-body"><%= render partial: 'phases/phase_details', object: phase, :as => :phase if phase.started? %></div>
