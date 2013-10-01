@@ -1,1 +1,7 @@
-$('#phase-partial').html('<%=j render partial: 'phases/phase', object: @phase %>');
+$panel_body = $("#phase-<%= @phase.id %>").find('.panel-body');
+if ($panel_body.children().length > 0) {
+     $panel_body.empty();
+}
+else {
+     $panel_body.html('<%=j render partial: 'phases/phase_details', object: @phase, :as => :phase %>');
+}

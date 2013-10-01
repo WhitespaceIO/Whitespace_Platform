@@ -48,3 +48,5 @@ hr:after {
   clear: both;
   visibility: hidden;
 }
+
+.panel > .panel-body:empty {display:none;}

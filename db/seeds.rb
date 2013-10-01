@@ -78,7 +78,7 @@ whitespace_problem_phase.save
 whitespace_solution_phase = Phase.find(74)
 whitespace_solution_phase.started_at = '2013-09-25'
 whitespace_solution_phase.state = :started
-whitespace_problem_phase.save
+whitespace_solution_phase.save
 
 weekly = whitespace_solution_phase.ideas.create(text: 'Weekly meetings and Facebook messenger')
 c = weekly.comments.create(text: 'We need some place to centrally organize info')

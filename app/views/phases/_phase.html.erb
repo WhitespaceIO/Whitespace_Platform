@@ -1,19 +1,14 @@
-<div class="phase panel panel-default">
+<div id="phase-<%= phase.id %>" class="phase panel panel-default">
   <h3 class="panel-heading">
     <span class="badge"><%= phase.ordinal %></span>
-    <span class="phase-name"><%= link_to phase.name, project_phase_path(phase.project, phase) %></span>
-     -
+    <span class="phase-name">
+    <%= phase.pending? ? phase.name : (link_to phase.name, project_phase_path(phase.project, phase), :remote => true) %>
+    </span>
     <% if phase.description %>
         <span class="phase-description"><%= phase.description %></span>
     <% else %>
         <small class="phase-description">An idea has not yet been accepted.</small>
     <% end %>
   </h3>
-  <div class="panel-body">
-      <ol class="phase-ideas list-unstyled">
-        <%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %>
-      </ol>
-      <div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>
-      <div class="phase-resources"><%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %></div>
-  </div>
+  <div class="panel-body"><%= render partial: 'phases/phase_details', object: phase, :as => :phase if phase.started? %></div>
 </div>

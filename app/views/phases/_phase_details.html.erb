@@ -1,0 +1,5 @@
+<ol class="phase-ideas list-unstyled">
+  <%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %>
+</ol>
+<div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>
+<div class="phase-resources"><%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %></div>

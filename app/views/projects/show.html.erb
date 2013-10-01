@@ -18,12 +18,11 @@
 <% end %>
 </ul>
 
-
 <ol id="phases">
-  <%= render partial: 'phase', :collection => @project.phases, :as => :phase %>
+  <%= render partial: 'projects/phase', :collection => @project.phases, :as => :phase %>
 </ol>
 
-<div id='phase-partial'></div>
+<%= render partial: 'phases/phase', :collection => @project.phases, :as => :phase %>
 
 <hr>
 
