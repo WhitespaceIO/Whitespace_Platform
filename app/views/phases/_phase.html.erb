@@ -1,6 +1,5 @@
 <div id="phase-<%= phase.id %>" class="phase panel panel-default">
   <h3 class="panel-heading">
-    <span class="badge"><%= phase.ordinal %></span>
     <span class="phase-name">
     <%= phase.pending? ? phase.name : (link_to phase.name, project_phase_path(phase.project, phase), :remote => true) %>
     </span>
