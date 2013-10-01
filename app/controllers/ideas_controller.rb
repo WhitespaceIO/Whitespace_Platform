@@ -26,11 +26,11 @@ class IdeasController < ApplicationController
 
   def create
     logger.info "Params #{params.inspect}"
-    @idea = @phase.ideas.create (params[:idea].merge(user: current_user))
+    @idea = @phase.ideas.create(params[:idea].merge(user: current_user))
     respond_with_ideas :created,
-                           @idea,
-                           project_phase_path(@idea.phase.project, @idea.phase),
-                           'Proposal was successfully created.'
+                       @idea,
+                       project_phase_path(@idea.phase.project, @idea.phase),
+                       'Proposal was successfully created.'
   end
 
   def update

@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
   acts_as_voteable
 
   def to_param
-    [id, name.parameterize].join("-")
+    [id, name.parameterize].join('-')
   end
 
   def init

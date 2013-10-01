@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20130924033652) do
     t.string   "description"
     t.string   "state"
     t.integer  "ordinal"
-    t.date     "started_at"
-    t.date     "completed_at"
+    t.datetime "started_at"
+    t.datetime "completed_at"
     t.integer  "project_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

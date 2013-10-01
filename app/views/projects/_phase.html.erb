@@ -3,8 +3,26 @@
        <%= link_to phase.name, project_phase_path(phase.project, phase), remote: true %>
      </button>
 <% elsif phase.started? %>
-     <button type="button" class="btn btn-default" style="background-color:#A4A4A4;width:<%= 1 / phase.project.phases.count.to_f * 100 %>%">
+     <button type="button" class="btn btn-default" style="height:34px;width:<%= 1 / phase.project.phases.count.to_f * 100 %>%">
        <%= link_to phase.name, project_phase_path(phase.project, phase), remote: true %>
+       <ol class="list-inline" style="position:relative;top:-26px;">
+         <%
+            started = phase.started_at.to_i
+            first = phase.ideas.sort_by{|i| i.created_at}.first.created_at.to_i
+            last = phase.ideas.sort_by{|i| i.created_at}.last.created_at.to_i
+            duration = (last - started) > 60*60*24*30 ? last - started : 60*60*24*30
+          %>
+         <% phase.ideas.each do |idea| %>
+              <li data-title="<%= idea.text %>" data-trigger="hover" data-placement="top" data-toggle="tooltip"
+                  style="opacity:0.5;padding:0;margin:0;background-color:#cc0000;min-width:3px;height:50px;position:absolute;bottom: 0;left:<%= (idea.created_at.to_i.to_f - started.to_f) / duration.to_f * 100 %>%">
+              </li>
+              <% idea.comments.each do |comment| %>
+                   <li data-title="<%= comment.text %>" data-trigger="hover" data-placement="top" data-toggle="tooltip"
+                       style="opacity:0.5;padding:0;margin:0;background-color:seagreen;min-width:2px;height:30px;position:absolute;bottom: 0;left:<%= (comment.created_at.to_i.to_f - started.to_f) / duration.to_f * 100 %>%">
+                   </li>
+              <% end %>
+         <% end %>
+       </ol>
      </button>
 <% else %>
      <button type="button" class="btn btn-default" style="width:<%= 1 / phase.project.phases.count.to_f * 100 %>%" disabled>

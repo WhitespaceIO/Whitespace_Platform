@@ -70,24 +70,24 @@ whitespace.tags.create(name: 'better good')
 whitespace.tags.create(name: 'empowerment')
 
 whitespace_problem_phase = Phase.find(73)
-whitespace_problem_phase.started_at = '2013-05-25'
-whitespace_problem_phase.completed_at = '2013-09-25'
+whitespace_problem_phase.started_at = '2013-08-01 05:25:46'
+whitespace_problem_phase.completed_at = '2013-09-01 05:25:46'
 whitespace_problem_phase.state = :completed
 whitespace_problem_phase.save
 
 whitespace_solution_phase = Phase.find(74)
-whitespace_solution_phase.started_at = '2013-09-25'
+whitespace_solution_phase.started_at = '2013-09-01 05:25:46'
 whitespace_solution_phase.state = :started
 whitespace_solution_phase.save
 
-weekly = whitespace_solution_phase.ideas.create!(text: 'Weekly meetings and Facebook messenger', user: sally)
-weekly.comments.create!(text: 'We need some place to centrally organize info', user: tim)
-weekly.comments.create!(text: 'We need to be able to collaborate with those in different locations', user: sally)
+weekly = whitespace_solution_phase.ideas.create!(text: 'Weekly meetings and Facebook messenger', user: sally, created_at: '2013-09-05 05:25:46')
+weekly.comments.create!(text: 'We need some place to centrally organize info', user: tim, created_at: '2013-09-05 10:25:46')
+weekly.comments.create!(text: 'We need to be able to collaborate with those in different locations', user: sally, created_at: '2013-09-05 10:25:46')
 
-gdrive = whitespace_solution_phase.ideas.create!(text: 'Use Google Drive and Github', user: james)
-gdrive.comments.create!(text: 'Google Drive is complicated', user: tim)
-gdrive.comments.create!(text: 'True, and not all projects need a code repo!', user: james)
+gdrive = whitespace_solution_phase.ideas.create!(text: 'Use Google Drive and Github', user: james, created_at: '2013-09-10 05:25:46')
+gdrive.comments.create!(text: 'Google Drive is complicated', user: tim, created_at: '2013-09-11 05:25:46')
+gdrive.comments.create!(text: 'True, and not all projects need a code repo!', user: james, created_at: '2013-09-12 05:25:46')
 
-online_platform = whitespace_solution_phase.ideas.create!(text: 'Online web platform', user: tim)
-online_platform.comments.create!(text: 'This sounds like it might actually work!', user: sally)
-online_platform.comments.create!(text: 'I love this!', user: james)
+online_platform = whitespace_solution_phase.ideas.create!(text: 'Online web platform', user: tim, created_at: '2013-09-15 05:25:46')
+online_platform.comments.create!(text: 'This sounds like it might actually work!', user: sally, created_at: '2013-09-25 05:25:46')
+online_platform.comments.create!(text: 'I love this!', user: james, created_at: '2013-09-17 05:25:46')
