@@ -80,25 +80,14 @@ whitespace_solution_phase.started_at = '2013-09-25'
 whitespace_solution_phase.state = :started
 whitespace_solution_phase.save
 
-weekly = whitespace_solution_phase.ideas.create(text: 'Weekly meetings and Facebook messenger')
-c = weekly.comments.create(text: 'We need some place to centrally organize info')
-c.user_id = 1
-c.save
-c = weekly.comments.create(text: 'We need to be able to collaborate with those in different locations')
-c.user_id = 2
-c.save
+weekly = whitespace_solution_phase.ideas.create!(text: 'Weekly meetings and Facebook messenger', user: sally)
+weekly.comments.create!(text: 'We need some place to centrally organize info', user: tim)
+weekly.comments.create!(text: 'We need to be able to collaborate with those in different locations', user: sally)
 
-gdrive = whitespace_solution_phase.ideas.create(text: 'Use Google Drive and Github')
-c = gdrive.comments.create(text: 'Google Drive is complicated')
-c.user_id = 3
-c.save
-c = gdrive.comments.create(text: 'Not all projects need a code repo!')
-c.user_id = 1
+gdrive = whitespace_solution_phase.ideas.create!(text: 'Use Google Drive and Github', user: james)
+gdrive.comments.create!(text: 'Google Drive is complicated', user: tim)
+gdrive.comments.create!(text: 'True, and not all projects need a code repo!', user: james)
 
-online_platform = whitespace_solution_phase.ideas.create(text: 'Online web platform')
-c = online_platform.comments.create(text: 'This sounds like it might actually work!')
-c.user_id = 2
-c.save
-c = online_platform.comments.create(text: 'I love this!')
-c.user_id = 3
-c.save
+online_platform = whitespace_solution_phase.ideas.create!(text: 'Online web platform', user: tim)
+online_platform.comments.create!(text: 'This sounds like it might actually work!', user: sally)
+online_platform.comments.create!(text: 'I love this!', user: james)

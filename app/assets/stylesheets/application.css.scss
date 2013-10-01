@@ -50,3 +50,51 @@ hr:after {
 }
 
 .panel > .panel-body:empty {display:none;}
+
+.idea {
+  .thumbnail > img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .comment {
+    clear: both;
+    overflow: hidden;
+  }
+
+  .popover {
+    position: relative;
+    display: block;
+    max-width: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #efefef;
+
+    &.right {
+      margin-left: 65px;
+      margin-bottom: 4px;
+
+      .arrow {
+        border-right-color: #999999;
+        border-right-color: rgba(0, 0, 0, 0.11);
+      }
+    }
+
+    &.left {
+      margin-right: 15px;
+
+      .arrow {
+        border-left-color: #999999;
+        border-left-color: rgba(0, 0, 0, 0.11);
+      }
+    }
+
+    > .arrow {
+      top: 1.5em;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

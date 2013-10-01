@@ -1,24 +1,32 @@
 <li id="idea_<%= idea.id %>" class="idea" data-id="<%= idea.id %>">
-  <h4 class="idea-text">
-    <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
-    <small class="idea-votes">
-      <%= idea.votes_for == 1 ? '1 vote' : "#{idea.votes_for} votes" %>
-    </small>
-    <small class="idea-vote-up"><%= link_to('+', vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
-    <small class="idea-vote-down"><%= link_to('-', vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
-  </h4>
+  <%= link_to image_tag('http://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg'), user_path(idea.user), {:class => 'idea-user thumbnail pull-left'} %>
+
+  <div class="popover right">
+    <div class="arrow"></div>
+
+    <div class="popover-content">
+      <h4 class="idea-text">
+        <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
+        <small class="idea-votes">
+          <%= idea.votes_for == 1 ? '1 vote' : "#{idea.votes_for} votes" %>
+        </small>
+        <small class="idea-vote-up"><%= link_to('+', vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+        <small class="idea-vote-down"><%= link_to('-', vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+      </h4>
+    </div>
+  </div>
 
   <ol id="idea-comments" class="list-unstyled">
     <% idea.comments.each do |comment| %>
-    <li>
-      <h6>
-        <%= link_to comment.user.display_name, user_path(comment.user), :class => 'comment-author' %>
-        -
-        <span class="comment-text"><%= comment.text %></span>
-      </h6>
+    <li class="comment">
+      <%= link_to image_tag('http://viewallpaper.com/wp-content/uploads/2013/07/Face-HD-Wallpaper.jpg'), user_path(comment.user), {:class => 'comment-author thumbnail pull-right'} %>
+
+      <div class="popover left pull-right">
+        <div class="arrow"></div>
+        <p class="popover-content comment-text"><%= comment.text %></p>
+      </div>
     </li>
     <% end %>
   </ol>
-  <span class="idea-user"><%= idea.user.display_name unless idea.user.nil? %></span>
   <span class="idea-more"><%= link_to '...', project_phase_idea_path(idea.phase.project, idea.phase, idea.id), :remote => true if idea.comments.count > 0 %></span>
 </li>
