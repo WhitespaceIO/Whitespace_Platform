@@ -75,6 +75,13 @@ whitespace_problem_phase.completed_at = '2013-09-01 05:25:46'
 whitespace_problem_phase.state = :completed
 whitespace_problem_phase.save
 
+platform = whitespace_problem_phase.ideas.create!(text: 'Need a web platform', user: sally, created_at: '2013-08-01 05:25:46')
+platform.comments.create!(text: 'Totally!', user: tim, created_at: '2013-08-02 10:25:46')
+
+app = whitespace_problem_phase.ideas.create!(text: 'Need a mobile app!', user: james, created_at: '2013-08-03 05:25:46')
+app.comments.create!(text: 'iOS?', user: tim, created_at: '2013-08-04 05:25:46')
+app.comments.create!(text: 'Yes! And Android!', user: james, created_at: '2013-08-07 05:25:46')
+
 whitespace_solution_phase = Phase.find(74)
 whitespace_solution_phase.started_at = '2013-09-01 05:25:46'
 whitespace_solution_phase.state = :started
