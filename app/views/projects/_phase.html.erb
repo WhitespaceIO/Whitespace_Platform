@@ -1,5 +1,13 @@
-<li class="phase" data-id='<%= phase.id %>'>
-  <span class="phase-title"><%= link_to phase.name, project_phase_path(phase.project, phase), remote: true %></span>
-  <span class="phase-description"><%= phase.description %></span>
-  <span class="phase-state"><%= phase.state %></span>
-</li>
+<% if phase.completed? %>
+     <button type="button" class="btn btn-default" style="background-color:#6E6E6E;width:<%= 1 / phase.project.phases.count.to_f * 100 %>%">
+       <%= link_to phase.name, project_phase_path(phase.project, phase), remote: true %>
+     </button>
+<% elsif phase.started? %>
+     <button type="button" class="btn btn-default" style="background-color:#A4A4A4;width:<%= 1 / phase.project.phases.count.to_f * 100 %>%">
+       <%= link_to phase.name, project_phase_path(phase.project, phase), remote: true %>
+     </button>
+<% else %>
+     <button type="button" class="btn btn-default" style="width:<%= 1 / phase.project.phases.count.to_f * 100 %>%" disabled>
+       <span><%= phase.name %></span>
+     </button>
+<% end %>

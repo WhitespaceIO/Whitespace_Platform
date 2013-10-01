@@ -18,11 +18,16 @@
 <% end %>
 </ul>
 
-<ol id="phases">
+<br/>
+<div class="btn-group" style="width:100%;">
   <%= render partial: 'projects/phase', :collection => @project.phases, :as => :phase %>
-</ol>
+</div>
+<br/>
+<br/>
 
-<%= render partial: 'phases/phase', :collection => @project.phases, :as => :phase %>
+<div>
+  <%= render partial: 'phases/phase', :collection => @project.phases, :as => :phase %>
+</div>
 
 <hr>
 
