@@ -1,7 +1,11 @@
 $panel_body = $("#phase-<%= @phase.id %>").find('.panel-body');
 if ($panel_body.children().length > 0) {
-     $panel_body.empty();
+     $panel_body.slideToggle("slow", function() {
+          $panel_body.empty();
+     });
 }
 else {
+     $panel_body.hide();
      $panel_body.html('<%=j render partial: 'phases/phase_details', object: @phase, :as => :phase %>');
+     $panel_body.slideToggle('slow');
 }
