@@ -19,7 +19,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    respond_with_projects :created, @project, projects_path(@project), 'Project was successfully created.'
+    @project = Project.create!(params[:project])
+    respond_with_projects :created, @project, project_path(@project), 'Project was successfully created.'
   end
 
   def update
