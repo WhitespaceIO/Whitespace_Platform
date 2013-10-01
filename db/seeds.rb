@@ -69,7 +69,7 @@ whitespace.tags.create(name: 'social')
 whitespace.tags.create(name: 'better good')
 whitespace.tags.create(name: 'empowerment')
 
-whitespace_problem_phase = Phase.find(73)
+whitespace_problem_phase = whitespace.phases.sort_by{|p| p.ordinal}[0]
 whitespace_problem_phase.started_at = '2013-08-01 05:25:46'
 whitespace_problem_phase.completed_at = '2013-09-01 05:25:46'
 whitespace_problem_phase.state = :completed
@@ -82,7 +82,7 @@ app = whitespace_problem_phase.ideas.create!(text: 'Need a mobile app!', user: j
 app.comments.create!(text: 'iOS?', user: tim, created_at: '2013-08-04 05:25:46')
 app.comments.create!(text: 'Yes! And Android!', user: james, created_at: '2013-08-07 05:25:46')
 
-whitespace_solution_phase = Phase.find(74)
+whitespace_solution_phase = whitespace.phases.sort_by{|p| p.ordinal}[1]
 whitespace_solution_phase.started_at = '2013-09-01 05:25:46'
 whitespace_solution_phase.state = :started
 whitespace_solution_phase.save
