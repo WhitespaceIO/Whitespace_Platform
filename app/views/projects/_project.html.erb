@@ -1,4 +1,10 @@
 <div class="well well-sm project">
   <div class="project-name"><%= link_to project.name, project_path(project) %></div>
   <div class="project-description"><%= project.description %></div>
+  <div class="project-tags">
+    <ul class="list-inline">
+      <% project.tags.each do |tag|%>
+           <li><span class="tag label label-default"><%= tag.name %></span></li>
+      <% end %>
+    </ul></div>
 </div>

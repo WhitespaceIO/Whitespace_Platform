@@ -67,11 +67,9 @@
 </div>
 
 <div class="row">
-    <ul class="projects list-unstyled col-md-12">
-      <% @projects.each do |project| %>
-        <li class="project well well-sm">
-          <%= link_to project.name, project_path(project), {:title => project.description} %>
-        </li>
-      <% end %>
-    </ul>
+  <% @projects.each_with_index do |project, index| %>
+       <div class="col-md-6">
+         <%= render partial: 'projects/project', :object => project, :as => :project %>
+       </div>
+  <% end %>
 </div>
