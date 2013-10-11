@@ -32,14 +32,7 @@ h3 > .badge {
 .add {
 }
 
-.user {
-  .user-name {
-    font-weight:bold;
-  }
-  .user-email {
 
-  }
-}
 .clear:after,
 hr:after {
   content: ".";
@@ -50,6 +43,17 @@ hr:after {
 }
 
 .panel > .panel-body:empty {display:none;}
+
+.thumbnail > img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.users {
+  li {
+    overflow: hidden;
+  }
+}
 
 .idea {
   .thumbnail > img {
