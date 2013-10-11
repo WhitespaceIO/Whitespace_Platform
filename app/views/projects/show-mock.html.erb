@@ -1,0 +1,162 @@
+<style>
+    .phase-progress-bar.phase-pending {background: transparent}
+</style>
+
+<ul class="breadcrumb">
+  <li><%= link_to 'Projects', projects_path %> <span class="divider">/</span></li>
+  <li class="active"><%= @project.name %></li>
+</ul>
+
+<p id="notice"><%= notice %></p>
+
+<div class="well">
+  <h2><%= @project.name %></h2>
+
+  <ul class="tags inline">
+    <% @project.tags.each do |tag|%>
+        <li><span class="tag label"><%= tag.name %></span></li>
+    <% end %>
+  </ul>
+
+  <p><%= @project.description %></p>
+
+  <h4 class="progress">
+    <span class="bar bar-success phase-progress-bar phase-completed" style="width: 11.1111111%">
+        <a href="/#define-a-problem" class="badge badge-success">1</a>
+    </span>
+    <span class="bar bar-info phase-progress-bar phase-started" style="width: 11.1111111%">
+        <a href="/#accept-a-solution" class="badge badge-info">2</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.1111111%">
+        <a href="/#establish-technology" class="badge badge-error">3</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.1111111%">
+        <a href="/#gather-a-team" class="badge badge-danger">4</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.1111111%">
+        <a href="/#" class="badge badge-danger">5</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.1111111%">
+        <a href="/#define-a-problem" class="badge badge-danger">6</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.1111111%">
+        <a href="/#define-a-problem" class="badge badge-danger">7</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.11111%">
+        <a href="/#define-a-problem" class="badge badge-danger">8</a>
+    </span>
+    <span class="bar phase-progress-bar phase-pending" style="width: 11.1111111%">
+        <a href="/#define-a-problem" class="badge badge-danger">9</a>
+    </span>
+  </h4>
+</div>
+
+
+<div id="phases" class="clear">
+  <!--
+  <h4 class="progress">
+    <% @project.phases.each_with_index do |phase, k|%>
+    <span class="phase-progress-bar phase
+      <% if phase.state == 'pending' %>bar phase-pending
+      <% elsif phase.state == 'started' %>bar bar-info phase-started
+      <% elsif phase.state == 'completed' %>bar bar-success phase-completed
+      <% end %>" style="width: <%= 100.0/@project.phases.length %>%">
+
+      <a href="#" class="badge
+        <% if phase.state == 'pending' %>badge-danger
+        <% elsif phase.state == 'started' %>badge-info
+        <% elsif phase.state == 'completed' %>badge-success
+        <% end %>"><%= k+ 1 %></a>
+    </span>
+    <% end %>
+  </h4>
+  -->
+
+  <!--<%= render partial: 'phase', :collection => @project.phases, :as => :phase %>-->
+  <dl>
+    <dt>
+    <h3>
+      <span class="badge badge-success">1</span>
+      Problem -
+      <a href="#">How can we get people openly collaborating over problems we can't solve solo?</a>
+    </h3>
+    </dt>
+    <dt>
+    <h3>
+      <span class="badge badge-info">2</span>
+      Solution -
+      <small><a href="#">(a solution has not yet been chosen)</a></small>
+    </h3>
+    </dt>
+    <dd>
+      <ul class="ideas">
+        <li>
+          <h4><a href="#">Online web platform</a> (+45 ^)</h4>
+          <ul class="unstyled">
+            <li><a href="#">James</a> - This sounds like it might actually work!</li>
+            <li><a href="#">Sally</a> - I love this!</li>
+            <li class="btn-group">
+              <a href="#" class="btn btn-mini">Share your thoughts</a>
+              <a href="#" class="btn btn-mini">Choose this idea</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4><a href="#">Use Google Drive and Github</a>
+            (+8 <button class="btn btn-mini"><i class="icon-chevron-up"></i>
+          </button>)</h4>
+          <ul class="unstyled">
+            <li><a href="#">Sally</a> - Google Drive is complicated.</li>
+            <li><a href="#">Time</a> - Not all projects need a code repo.</li>
+            <li class="btn-group">
+              <a href="#" class="btn btn-mini">Share your thoughts</a>
+              <a href="#" class="btn btn-mini">Choose this idea</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4><a href="#">Weekly meetings and Facebook messenger</a> (-4 ^) </h4>
+          <ul class="unstyled">
+            <li><a href="#">Craig</a> - We need some place to centrally organize info.</li>
+            <li><a href="#">Jim</a> - We need to be able to collaborate with those in different locations.</li>
+            <li class="btn-group">
+              <a href="#" class="btn btn-mini">Share your thoughts</a>
+              <a href="#" class="btn btn-mini">Choose this idea</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Think of a better idea? <a href="#">Propose your own solution!</a></h4>
+        </li>
+      </ul>
+    </dd>
+    <dt class="phase-header">
+    <h3>
+      <span class="badge phase-pending">3</span>
+      What's left on this project?
+    </h3>
+    </dt>
+    <dd>
+      <ul class="inline">
+        <li><a href="#">Decide on a solution</a></li>
+        <li><a href="#">Establish technology</a></li>
+        <li><a href="#">Reach for funding</a></li>
+        <li><a href="#">Gather a team</a></li>
+        <li><a href="#">Come up with a design</a></li>
+        <li><a href="#">Begin prototyping</a></li>
+        <li><a href="#">Start development</a></li>
+      </ul>
+    </dd>
+  </dl>
+</div>
+<hr>
+<h4><%= link_to 'Comments', project_comments_path(@project) %></h4>
+<div id="comments" class="clear">
+  <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
+</div>
+<% if can? :create, Comment %>
+    <div class="box">
+      <%= render 'comments/form', :record => [@project, @comment], :comment => @comment %>
+    </div>
+<% end %>
+<hr>
