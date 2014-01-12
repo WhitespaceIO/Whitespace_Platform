@@ -54,6 +54,11 @@ class Project < ActiveRecord::Base
       project.phase.update_attribute :started_at, Time.now
     end
 
+    before_transition :on => :reject do |project|
+      project.phase.update_attribute :started_at, nil
+      project.last_phase.update_attribute :completed_at, nil
+    end
+
     state :problem
     state :solution
     state :technology
@@ -67,6 +72,10 @@ class Project < ActiveRecord::Base
 
   def phase
     self.phases.where(:completed_at => nil).first
+  end
+
+  def last_phase
+    self.phases.where('completed_at IS NOT null').last
   end
 
   def to_param
