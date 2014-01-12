@@ -24,9 +24,11 @@
        <%= link_to phase.name, project_phase_path(phase.project, phase), remote: true %>
        <ol class="list-inline" style="position:relative;top:-26px;">
          <%
-            started = phase.started_at.to_i
-            last = phase.ideas.sort_by{|i| i.created_at}.last.created_at.to_i
-            duration = (last - started) > 60*60*24*30 ? last - started : 60*60*24*30
+            unless phase.ideas.empty?
+              started = phase.started_at.to_i
+              last = phase.last_idea.created_at.to_i
+              duration = (last - started) > 60*60*24*30 ? last - started : 60*60*24*30
+            end
           %>
          <% phase.ideas.each do |idea| %>
               <li title="<%= idea.text %>"

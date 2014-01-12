@@ -20,13 +20,13 @@
 
 <br/>
 <div class="btn-group" style="width:100%; margin-top: 50px;">
-  <%= render partial: 'projects/phase', :collection => @project.phases.sort_by {|p| p.ordinal }, :as => :phase %>
+  <%= render partial: 'projects/phase', :collection => @project.phases, :as => :phase %>
 </div>
 <br/>
 <br/>
 
 <div>
-  <%= render partial: 'phases/phase', :collection => @project.phases.sort_by {|p| p.ordinal }, :as => :phase %>
+  <%= render partial: 'phases/phase', :collection => @project.phases, :as => :phase %>
 </div>
 
 <hr>

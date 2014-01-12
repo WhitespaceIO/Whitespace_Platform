@@ -47,10 +47,7 @@ ActiveRecord::Schema.define(:version => 20130924033652) do
   end
 
   create_table "phases", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "state"
-    t.integer  "ordinal"
+    t.string   "type"
     t.datetime "started_at"
     t.datetime "completed_at"
     t.integer  "project_id"
