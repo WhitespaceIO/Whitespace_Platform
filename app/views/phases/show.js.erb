@@ -6,6 +6,6 @@ if ($panel_body.children().length > 0) {
 }
 else {
      $panel_body.hide();
-     $panel_body.html('<%=j render partial: 'phases/phase_details', object: @phase, :as => :phase %>');
+     $panel_body.html('<%=j render partial: 'phases/details', object: @phase, :as => :phase %>');
      $panel_body.slideToggle('slow');
 }

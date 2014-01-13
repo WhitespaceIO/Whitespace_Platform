@@ -1,12 +1,6 @@
 class PhasesController < ApplicationController
-  before_filter :find_project, :only => [:index]
+  before_filter :find_project, :only => [:show]
   before_filter :find_phase, :only => [:show]
-
-  def index
-    @phases = @project.phases
-    @comment = Comment.new
-    respond_with @phases
-  end
 
   def show
     @idea = Idea.new
@@ -18,11 +12,17 @@ class PhasesController < ApplicationController
   private
 
   def find_project
-    @project = Project.find(params[:project_id])
+    if params.has_key?(:project_id)
+      @project = Project.find(params[:project_id])
+    end
   end
 
   def find_phase
-    @phase = Phase.find(params[:id])
+    if params.has_key?(:phase_id)
+      @phase = @project.phases.where(:type => params[:phase_id].capitalize).first
+    else
+      @phase = Phase.where('id =? OR type = ?', params[:id], params[:id].capitalize).first
+    end
   end
 
   def respond_with_phases(status, phases, location = nil, notice = nil)

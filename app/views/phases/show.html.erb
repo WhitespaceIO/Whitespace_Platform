@@ -1,41 +1,7 @@
-<h4><%= link_to 'Projects', projects_path %> |
-  <%= link_to @phase.project.name, project_path(@phase.project) %> |
-  <%= link_to 'Phases', project_phases_path(@phase.project) %> |
-  <%= @phase.name %></h4>
-<p id="notice"><%= notice %></p>
-<h5><%= @phase.description %></h5>
-<hr>
-<% @phase.tags.each do |tag|%>
-     <span class="tag"><%= tag.name %></span>
-<% end %>
-<hr>
-<h4><%= link_to 'Ideas', project_phase_ideas_path(@phase.project, @phase) %></h4>
-<div id="ideas">
-  <%= render partial: 'idea', :collection => @phase.ideas, :as => :idea %>
-</div>
-<% if can? :create, Idea %>
-<div id="ideas" class="well well-sm">
-     <%= render 'ideas/form', :locals=>{:phase => @phase, :idea => @idea} %>
-</div>
-<% end %>
-<hr>
-<h4>Resources</h4>
-<div id="resources">
-  <%= render partial: 'resources/resource', :collection => @phase.resources, :as => :resource %>
-</div>
-<% if can? :create, Resource %>
-     <div class="well well-sm">
-       <%= render 'resources/form', :phase => @phase, :resource => @resource  %>
-     </div>
-<% end %>
-<hr>
-<h4>Comments</h4>
-<div id="comments">
-  <%= render partial: 'comments/comment', :collection => @phase.comments, :as => :comment %>
-</div>
-<% if can? :create, Comment %>
-<div class="well well-sm">
-  <%= render 'comments/form', :record => [@phase.project, @phase, @comment], :comment => @comment  %>
-</div>
-<% end %>
-<hr>
+<ol class="breadcrumb">
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li><%= link_to @phase.project.name, project_path(@phase.project) %></li>
+  <li class="active"><%= @phase.name %></li>
+</ol>
+
+<%= render partial: 'phases/phase', :locals => { :phase => @phase } %>

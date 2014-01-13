@@ -1,4 +1,7 @@
 <ol class="phase-ideas list-unstyled">
+  <% if phase.started? && !phase.completed? %>
+    <%= render partial: 'ideas/add', :locals => {:phase => phase, :idea => Idea.new} %>
+  <% end %>
   <%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %>
 </ol>
 <div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>

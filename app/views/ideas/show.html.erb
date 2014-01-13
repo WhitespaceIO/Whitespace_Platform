@@ -1,22 +1,23 @@
-<h4><%= link_to 'Projects', projects_path %> |
-  <%= link_to @idea.phase.project.name, project_path(@idea.phase.project) %> |
-  <%= link_to 'Phases', project_phases_path(@idea.phase.project) %> |
-  <%= link_to @idea.phase.name, project_phase_path(@idea.phase.project, @idea.phase) %> |
-Proposal</h4>
+<ol class="breadcrumb">
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li><%= link_to @phase.project.name, project_path(@phase.project) %></li>
+  <li><%= link_to @phase.name, project_phase_path(@phase.project, @phase.slug) %></li>
+  <li class="active"><%= @idea.text %></li>
+</ol>
+
 <p id="notice"><%= notice %></p>
-<hr>
+
 <div class="well well-sm"><%= @idea.text %></div>
 <div class="well well-sm">by <%= @idea.user.display_name unless @idea.user.nil? %></div>
 <div class="well well-sm"><%= @idea.plusminus %> votes</div>
 <div class="well well-sm">on <%= @idea.created_at.strftime('%l:%M%P on %B %d, %Y') %></div>
 <hr>
-<h4>Comments</h4>
 <div id="comments">
   <%= render partial: 'comments/comment', :collection => @idea.comments, :as => :comment %>
 </div>
 <% if can? :create, Comment %>
 <div class="well well-sm">
-  <%= render 'comments/form', :record => [@idea.phase.project, @idea.phase, @idea, @comment], :comment => @comment  %>
+  <%= render 'comments/form', :url => new_project_phase_idea_comment_path(@idea.phase.project, @idea.phase, @idea, @comment), :comment => @comment  %>
 </div>
 <% end %>
 <hr>

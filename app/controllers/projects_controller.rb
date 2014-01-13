@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
-  load_and_authorize_resource
+  before_filter :find_project, :only => [:show, :edit, :update, :destroy]
 
   def index
+    @projects = Project.all
     respond_with_projects :ok, @projects
   end
 
@@ -34,6 +35,10 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def find_project
+    @project = Project.find(params[:id])
+  end
 
   def respond_with_projects(status, projects, location = nil, notice = nil)
     respond_with projects,

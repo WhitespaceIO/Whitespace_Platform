@@ -106,3 +106,20 @@ hr:after {
     }
   }
 }
+
+.idea-votes {
+  float:right;
+}
+.phase-stats {
+  float:right;
+  img {
+    padding-left:3px;
+    padding-right:10px;
+  }
+}
+.popover-content {
+  input {
+    width:100%;
+    padding:10px;
+  }
+}

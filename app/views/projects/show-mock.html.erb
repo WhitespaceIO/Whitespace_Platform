@@ -156,7 +156,7 @@
 </div>
 <% if can? :create, Comment %>
     <div class="box">
-      <%= render 'comments/form', :record => [@project, @comment], :comment => @comment %>
+      <%= render 'comments/form', :url => new_project_comment_path(@project, @comment), :comment => @comment %>
     </div>
 <% end %>
 <hr>

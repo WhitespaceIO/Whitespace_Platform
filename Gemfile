@@ -11,6 +11,7 @@ gem 'state_machine'
 gem 'font-awesome-rails'
 gem 'figaro'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+gem 'gravatar_image_tag'
 
 group :production do
   gem 'pg'
@@ -18,6 +19,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'webrick', '~> 1.3.1'
 end
 
 group :assets do

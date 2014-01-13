@@ -1,5 +1,5 @@
 <li id="idea_<%= idea.id %>" class="idea" data-id="<%= idea.id %>">
-  <%= link_to image_tag('http://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg'), user_path(idea.user), {:class => 'idea-user thumbnail pull-left'} %>
+  <%= link_to image_tag('user@2x.png'), user_path(idea.user), {:class => 'idea-user thumbnail pull-left'} %>
 
   <div class="popover right">
     <div class="arrow"></div>
@@ -7,19 +7,32 @@
     <div class="popover-content">
       <h4 class="idea-text">
         <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
-        <small class="idea-votes">
-          <%= idea.votes_for == 1 ? '1 vote' : "#{idea.votes_for} votes" %>
-        </small>
-        <small class="idea-vote-up"><%= link_to('+', vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
-        <small class="idea-vote-down"><%= link_to('-', vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+        <div class="idea-votes">
+          <small class="idea-vote-for"><%= idea.votes_for %></small>
+          <small class="idea-vote-up"><%= link_to(image_tag('thumb_up.png'), vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+          <small class="idea-vote-down"><%= link_to(image_tag('thumb_down.png'), vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+        </div>
       </h4>
     </div>
   </div>
 
   <ol id="idea-comments" class="list-unstyled">
+    <li class="comment">
+      <%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>
+      <div class="popover left pull-right">
+        <div class="arrow"></div>
+        <p class="popover-content comment-text">
+          <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'}  do |f| %>
+          <div class="field">
+            <%= f.text_field :text, :placeholder => 'I think this is...' %>
+          </div>
+        <% end %>
+        </p>
+      </div>
+    </li>
     <% idea.comments.each do |comment| %>
     <li class="comment">
-      <%= link_to image_tag('http://viewallpaper.com/wp-content/uploads/2013/07/Face-HD-Wallpaper.jpg'), user_path(comment.user), {:class => 'comment-author thumbnail pull-right'} %>
+      <%= link_to image_tag('user@2x.png'), user_path(comment.user), {:class => 'comment-author thumbnail pull-right'} %>
 
       <div class="popover left pull-right">
         <div class="arrow"></div>

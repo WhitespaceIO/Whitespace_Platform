@@ -1,17 +1,11 @@
 class IdeasController < ApplicationController
-  before_filter :find_project, :only => [:index, :create]
-  before_filter :find_phase, :only => [:index, :create]
+  before_filter :find_project, :only => [:show, :create]
+  before_filter :find_phase, :only => [:show, :create]
   before_filter :find_idea, :only => [:show, :edit, :update, :destroy, :vote_up, :vote_down]
-
-  def index
-    @ideas = @phase.ideas
-    respond_with_ideas :ok, @ideas
-  end
 
   def show
     @comment = Comment.new
-    logger.info "Idea #{@idea.comments}"
-    respond_with_ideas :ok, @idea
+    respond_with @idea
   end
 
   def new
@@ -25,8 +19,10 @@ class IdeasController < ApplicationController
   end
 
   def create
-    logger.info "Params #{params.inspect}"
+    @project = Project.find(params[:project_id])
+    @phase = @project.phases.where(:type => params[:phase_id].capitalize).first
     @idea = @phase.ideas.create(params[:idea].merge(user: current_user))
+    logger.info "Idea #{@idea.inspect}"
     respond_with_ideas :created,
                        @idea,
                        project_phase_path(@idea.phase.project, @idea.phase),
@@ -56,15 +52,25 @@ class IdeasController < ApplicationController
   private
 
   def find_project
-    @project = Project.find(params[:project_id])
+    if params.has_key? :project_id
+      @project = Project.find(params[:project_id])
+    end
   end
 
   def find_phase
-    @phase = Phase.find(params[:phase_id])
+    if params.has_key?(:project_id)
+      @phase = @project.phases.where(:type => params[:phase_id].capitalize).first
+    else
+      @phase = Phase.where('id =? OR type = ?', params[:id], params[:id].capitalize).first
+    end
   end
 
   def find_idea
-    @idea = Idea.find(params[:id])
+    if params.has_key? :idea_id
+      @idea = Idea.find(params[:idea_id])
+    else
+      @idea = Idea.find(params[:id])
+    end
   end
 
   def respond_with_ideas(status, ideas, location = nil, notice = nil, template = nil)

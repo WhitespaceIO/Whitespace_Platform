@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <ol class="breadcrumb">
   <li><%= link_to 'Projects', projects_path %></li>
   <li class="active"><%= @project.name %></li>
 </ol>
+
+<p id="notice"><%= notice %></p>
 
 <div class="page-header">
   <h1><%= @project.name %></h1>
@@ -28,13 +28,3 @@
 <div>
   <%= render partial: 'phases/phase', :collection => @project.phases, :as => :phase %>
 </div>
-
-<hr>
-
-<div id="comments">
-  <h4>Comments</h4>
-  <%= render partial: 'comments/comment', :collection => @project.comments, :as => :comment %>
-</div>
-<% if can? :create, Comment %>
-<form><%= render 'comments/form', :record => [@project, @comment], :comment => @comment %></form>
-<% end %>

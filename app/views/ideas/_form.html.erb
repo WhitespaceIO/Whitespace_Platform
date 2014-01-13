@@ -1,4 +1,4 @@
-<%= form_for [@phase.project, @phase, @idea], :html => {id: 'idea-form', :class => 'form-inline'} do |f| %>
+<%= form_for @idea, :url => new_project_phase_idea_path(phase.project, phase, idea), :html => {id: 'idea-form', :class => 'form-inline'} do |f| %>
   <% if @idea.errors.any? %>
        <ul class="errors">
          <% @idea.errors.full_messages.each do |msg| %>

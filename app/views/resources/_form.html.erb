@@ -1,4 +1,5 @@
-<%= form_for [@phase.project, @phase, @resource], :remote => true, :html => {id: 'resource-form', :class => 'form-inline'}  do |f| %>
+<%= form_for @resource, :url => new_project_phase_resource_path(@phase.project, @phase, @resource),
+             :remote => true, :html => {id: 'resource-form', :class => 'form-inline'}  do |f| %>
      <% if @resource.errors.any? %>
        <ul class="errors">
          <% @resource.errors.full_messages.each do |msg| %>

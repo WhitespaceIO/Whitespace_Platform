@@ -45,4 +45,6 @@ Whitespace::Application.configure do
       :password             => ENV['DEVISE_CONFIRMATION_PASSWORD'],
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
+
+  config.middleware.use Rails::Rack::LogTailer
 end

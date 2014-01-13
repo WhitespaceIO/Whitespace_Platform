@@ -14,6 +14,10 @@ class Phase < ActiveRecord::Base
     self.type.capitalize
   end
 
+  def slug
+    self.type.downcase
+  end
+
   def started?
     self.started_at != nil
   end
@@ -31,7 +35,7 @@ class Phase < ActiveRecord::Base
   end
 
   def to_param
-    [id, name.parameterize].join('-')
+    type.downcase
   end
 
 end

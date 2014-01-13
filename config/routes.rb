@@ -24,6 +24,7 @@ Whitespace::Application.routes.draw do
       end
     end
     resources :comments
+    resources :users
   end
 
   resources :ideas do
@@ -52,6 +53,11 @@ Whitespace::Application.routes.draw do
   match 'contact', :to => 'pages#contact'
   match 'help', :to => 'pages#help'
   match 'problem', :to => 'pages#problem'
+
+  #match ':project_id', :to => 'projects#show', :as => :project
+  match 'projects/:project_id/:phase_id', :to => 'phases#show', :as => :project_phase
+  match 'projects/:project_id/:phase_id/:idea_id', :to => 'ideas#show', :as => :project_phase_idea
+  #match 'projects/:project_id/:phase_id/ideas', :to => 'ideas#create', :as => :new_project_phase_idea
 
   root :to => 'pages#index'
 

@@ -1,0 +1,13 @@
+<li id="idea-add" class="idea">
+  <%= image_tag 'user@2x.png', {:class => 'idea-user thumbnail pull-left'} %>
+  <div class="popover right">
+    <div class="arrow"></div>
+    <div class="popover-content">
+      <%= form_for Idea.new, :url => new_project_phase_idea_path(phase.project, phase), :html => {id: 'idea-form', :class => 'form-inline'} do |f| %>
+        <div class="field">
+          <%= f.text_field :text, :placeholder => phase.description %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</li>
