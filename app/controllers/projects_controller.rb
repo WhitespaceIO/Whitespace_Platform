@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @project = Project.new
     respond_with_projects :ok, @project
   end
 
