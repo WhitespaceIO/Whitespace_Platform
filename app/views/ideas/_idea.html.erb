@@ -1,45 +1,28 @@
-<li id="idea_<%= idea.id %>" class="idea" data-id="<%= idea.id %>">
-  <%= link_to image_tag('user@2x.png'), user_path(idea.user), {:class => 'idea-user thumbnail pull-left'} %>
+<li id="idea-<%= idea.id %>" class="idea" data-id="<%= idea.id %>">
+  <!--<%= link_to image_tag('user@2x.png'), user_path(idea.user), {:class => 'idea-user thumbnail pull-left'} %>-->
 
-  <div class="popover right">
-    <div class="arrow"></div>
+  <h4>
+    <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
+    <small><%= link_to idea.user.email, user_path(idea.user) %></small>
+    <span class="idea-votes">
+      <small class="idea-vote-for"><%= idea.votes_for %></small>
+      <small class="idea-vote-up"><%= link_to(image_tag('thumb_up.png'), vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+      <small class="idea-vote-down"><%= link_to(image_tag('thumb_down.png'), vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
+    </span>
+  </h4>
 
-    <div class="popover-content">
-      <h4 class="idea-text">
-        <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %>
-        <div class="idea-votes">
-          <small class="idea-vote-for"><%= idea.votes_for %></small>
-          <small class="idea-vote-up"><%= link_to(image_tag('thumb_up.png'), vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
-          <small class="idea-vote-down"><%= link_to(image_tag('thumb_down.png'), vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
-        </div>
-      </h4>
-    </div>
-  </div>
-
-  <ol id="idea-comments" class="list-unstyled">
-    <li class="comment">
-      <%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>
-      <div class="popover left pull-right">
-        <div class="arrow"></div>
-        <p class="popover-content comment-text">
-          <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'}  do |f| %>
-          <div class="field">
-            <%= f.text_field :text, :placeholder => 'I think this is...' %>
-          </div>
-        <% end %>
-        </p>
-      </div>
-    </li>
+  <ol id="idea-comments">
     <% idea.comments.each do |comment| %>
-    <li class="comment">
-      <%= link_to image_tag('user@2x.png'), user_path(comment.user), {:class => 'comment-author thumbnail pull-right'} %>
-
-      <div class="popover left pull-right">
-        <div class="arrow"></div>
-        <p class="popover-content comment-text"><%= comment.text %></p>
-      </div>
-    </li>
+      <li class="comment">
+        <!--<%= link_to image_tag('user@2x.png'), user_path(comment.user), {:class => 'comment-author thumbnail pull-right'} %>-->
+        <p class="comment-text"><%= comment.text %> - <%= link_to comment.user.email, user_path(comment.user) %></p>
+      </li>
     <% end %>
   </ol>
-  <span class="idea-more"><%= link_to '...', project_phase_idea_path(idea.phase.project, idea.phase, idea.id), :remote => true if idea.comments.count > 0 %></span>
+  <!--<%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>-->
+  <p class="comment-text">
+    <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'} do |f| %>
+      <%= f.text_field :text, :placeholder => 'I think this is...', :class => 'form-control' %>
+    <% end %>
+  </p>
 </li>

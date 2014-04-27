@@ -1,16 +1,4 @@
-<% if phase.started? %>
-  <div id="phase-<%= phase.id %>" class="phase panel panel-default">
-    <h3 class="panel-heading">
-    <span class="phase-name">
-    <%= phase.started? || phase.completed? ? (link_to phase.name, project_phase_path(phase.project, phase), :remote => true) : phase.name %>
-    </span>
-      <% if phase.started? %>
-        <div class="phase-stats">
-          <span class='phase-ideas'><%= phase.ideas.count %><%= image_tag 'ideas.png' %></span>
-          <span class='phase-comments'><%= phase.comments.count %><%= image_tag 'comments.png' %></span>
-        </div>
-      <% end %>
-    </h3>
-    <div class="panel-body"><%= render partial: 'phases/details', object: phase, :as => :phase if phase.started? && !phase.completed? %></div>
-  </div>
-<% end %>
+<li id="phase-<%= phase.id %>" data-id="<%= phase.id %>" class="phase <% if phase.started? %>started<% end %> <% if phase.completed? %>completed<% end %>">
+    <h3><%= phase.name %> - <%= link_to phase.description, project_phase_path(phase.project, phase) %></h3>
+    <%= render partial: 'phases/details', object: phase, :as => :phase %>
+</li>
