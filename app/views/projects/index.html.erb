@@ -10,7 +10,7 @@
 <div class="projects">
   <div class="row">
     <% @projects.each_with_index do |project, index| %>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <%= render partial: 'project', :object => project %>
         </div>
     <% end %>
