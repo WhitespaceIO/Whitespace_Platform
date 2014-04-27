@@ -52,7 +52,7 @@ Whitespace::Application.routes.draw do
   match 'about', :to => 'pages#about'
   match 'contact', :to => 'pages#contact'
   match 'help', :to => 'pages#help'
-  match 'problem', :to => 'pages#problem'
+  match 'more-info', :to => 'pages#more-info'
 
   match 'projects/:project_id/:phase_id', :to => 'phases#show', :as => :project_phase
   match 'projects/:project_id/:phase_id/:idea_id', :to => 'ideas#show', :as => :project_phase_idea
