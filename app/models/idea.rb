@@ -8,6 +8,12 @@ class Idea < ActiveRecord::Base
   has_many :taggings, :as => :taggable
   has_many :tags, :through => :taggings
 
+  has_and_belongs_to_many :resources
+
   acts_as_voteable
+
+  def accepted?
+    self.accepted_at != nil
+  end
 
 end

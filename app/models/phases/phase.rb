@@ -8,8 +8,6 @@ class Phase < ActiveRecord::Base
   has_many :taggings, :as => :taggable
   has_many :tags, :through => :taggings
 
-  has_and_belongs_to_many :resources
-
   def name
     self.type.capitalize
   end
@@ -40,6 +38,18 @@ class Phase < ActiveRecord::Base
 
   def to_param
     type.downcase
+  end
+
+  def resources
+    _resources = []
+    self.ideas.each do |idea|
+      if idea.accepted?
+        idea.resources.each do |resource|
+          _resources << resource
+        end
+      end
+    end
+    _resources.flatten
   end
 
 end

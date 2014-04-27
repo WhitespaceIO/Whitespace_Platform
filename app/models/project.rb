@@ -95,4 +95,12 @@ class Project < ActiveRecord::Base
     self.start_phase
   end
 
+  def resources
+    _resources = []
+    self.phases.each do |phase|
+      _resources << phase.resources
+    end
+    _resources.flatten
+  end
+
 end
