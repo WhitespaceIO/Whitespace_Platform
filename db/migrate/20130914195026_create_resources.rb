@@ -9,8 +9,8 @@ class CreateResources < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :phases_resources, :id => false do |t|
-      t.references :phase
+    create_table :ideas_resources, :id => false do |t|
+      t.references :idea
       t.references :resource
     end
 

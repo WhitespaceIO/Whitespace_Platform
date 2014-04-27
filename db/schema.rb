@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(:version => 20130924033652) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "ideas_resources", :id => false, :force => true do |t|
+    t.integer "idea_id"
+    t.integer "resource_id"
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "city"
@@ -54,11 +59,6 @@ ActiveRecord::Schema.define(:version => 20130924033652) do
     t.integer  "project_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "phases_resources", :id => false, :force => true do |t|
-    t.integer "phase_id"
-    t.integer "resource_id"
   end
 
   create_table "projects", :force => true do |t|
