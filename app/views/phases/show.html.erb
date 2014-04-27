@@ -4,4 +4,6 @@
   <li class="active"><%= @phase.name %></li>
 </ol>
 
-<%= render partial: 'phases/phase', :locals => { :phase => @phase } %>
+<ul>
+    <%= render partial: 'phases/phase', :locals => { :phase => @phase } %>
+</ul>
