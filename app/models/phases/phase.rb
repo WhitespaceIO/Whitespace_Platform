@@ -34,6 +34,10 @@ class Phase < ActiveRecord::Base
     self.ideas.sort_by {|i| i.created_at}.last unless self.ideas.empty?
   end
 
+  def accepted_idea
+    self.ideas.where(:accepted_at != nil) unless self.ideas.empty?
+  end
+
   def to_param
     type.downcase
   end

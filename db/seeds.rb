@@ -69,7 +69,7 @@ whitespace.tags.create(name: 'social')
 whitespace.tags.create(name: 'better good')
 whitespace.tags.create(name: 'empowerment')
 
-platform = whitespace.phase.ideas.create!(text: 'Need a web platform', user: sally, created_at: (Time.now + 1.day))
+platform = whitespace.phase.ideas.create!(text: 'Need a web platform', user: sally, created_at: (Time.now + 1.day), accepted_at: (Time.now + 1.day + 1.hour))
 platform.comments.create!(text: 'Totally!', user: tim, created_at: (Time.now + 2.days))
 
 app = whitespace.phase.ideas.create!(text: 'Need a mobile app!', user: james, created_at: (Time.now + 3.days))
@@ -82,7 +82,7 @@ weekly = whitespace.phase.ideas.create!(text: 'Weekly meetings and Facebook mess
 weekly.comments.create!(text: 'We need some place to centrally organize info', user: tim, created_at: (Time.now + 7.days))
 weekly.comments.create!(text: 'We need to be able to collaborate with those in different locations', user: sally, created_at: (Time.now + 8.days))
 
-gdrive = whitespace.phase.ideas.create!(text: 'Use Google Drive and Github', user: james, created_at: (Time.now + 9.days))
+gdrive = whitespace.phase.ideas.create!(text: 'Use Google Drive and Github', user: james, created_at: (Time.now + 9.days), accepted_at: (Time.now + 9.days + 1.hour))
 gdrive.comments.create!(text: 'Google Drive is complicated', user: tim, created_at: (Time.now + 10.days))
 gdrive.comments.create!(text: 'True, and not all projects need a code repo!', user: james, created_at: (Time.now + 11.days))
 

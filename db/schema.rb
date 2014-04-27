@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(:version => 20130924033652) do
 
   create_table "ideas", :force => true do |t|
     t.string   "text"
+    t.datetime "accepted_at"
     t.integer  "user_id"
     t.integer  "phase_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "locations", :force => true do |t|
