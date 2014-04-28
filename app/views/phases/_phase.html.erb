@@ -1,7 +1,6 @@
 <li id="phase-<%= phase.id %>" data-id="<%= phase.id %>" class="phase <% if phase.started? %>started<% end %> <% if phase.completed? %>completed<% end %>">
   <hr class="phase-separator">
   <h3>
-    <%= phase.name %> -
     <%= link_to phase.description, project_phase_path(phase.project, phase) %>
     <span class="phase-icon phase-icon-<%= phase.name.downcase %> icon-leaf"></span>
   </h3>

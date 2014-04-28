@@ -7,4 +7,7 @@
 </ul>
 
 <div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>
-<div class="phase-resources"><%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %></div>
+<ul class="resources phase-resources timeline list-unstyled">
+  <li class="timeline-axis"></li>
+  <%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %>
+</ul>
