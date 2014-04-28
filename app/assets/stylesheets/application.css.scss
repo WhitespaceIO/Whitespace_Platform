@@ -33,9 +33,6 @@ h3 > .badge {
   margin-left: auto;
 }
 
-.add {
-}
-
 
 .clear:after,
 hr:after {
@@ -45,8 +42,6 @@ hr:after {
   clear: both;
   visibility: hidden;
 }
-
-.panel > .panel-body:empty {display:none;}
 
 .thumbnail > img {
   max-width: 50px;
@@ -77,3 +72,179 @@ hr:after {
   }
 }
 
+.phases {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 4px solid #79dfaf;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  .phase {
+    padding-left: 1.8em;
+
+    hr.phase-separator {     // todo: swap to border-top
+      border-top: 1px solid #79dfaf;
+      margin-left: -1.6em;
+      margin-right: -1.6em;
+    }
+
+    h3 {
+      position: relative;
+      color: #79dfaf;
+
+      > a, > a:link, > a:visited {color: #79dfaf}
+      > a:hover, > a:active {color: #999}
+
+      .phase-icon {
+        position: absolute;
+        top: 0;
+        left: -1.5em;
+
+        color: #79dfaf;
+        background: white;
+      }
+    }
+  }
+}
+
+.ideas {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 1px dashed #71ccec;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  .idea {
+    a, a:link, a:visited, a:hover, a:active {color: #999}
+    padding-left: 1em;
+
+    h4 {
+      position: relative;
+      color: #71ccec;
+
+      > a, > a:link, > a:visited {color: #71ccec}
+      > a:hover, > a:active {color: #999}
+
+      .idea-icon {
+        position: absolute;
+        top: 0;
+        left: -2.5em;
+        color: #71ccec;
+        background: white;
+        padding-top: 4px;
+        margin-top: -4px;
+      }
+    }
+  }
+}
+
+.comments {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 1px dotted #df7c79;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+
+    display: none;
+  }
+
+  .comment {
+    a, a:link, a:visited, a:hover, a:active {color: #999}
+    padding-left: 1em;
+
+    p, form {
+      position: relative;
+      color: #df7c79;
+
+      .comment-icon {
+        position: absolute;
+        top: 0;
+        left: -2.5em;
+        color: #df7c79;
+        background: white;
+        padding-top: 2px;
+        padding-bottom: 2px;
+      }
+    }
+
+    &.create {
+      position: relative;
+
+      form {
+        .comment-icon {
+          top: 0.5em;
+          color: #e0e0e0;
+        }
+
+        .comment-create-icon {
+          left: -1.6em;
+          top: 1em;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+.resources {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 1px dotted #df7c79;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  .resource {
+    a, a:link, a:visited, a:hover, a:active {color: #999}
+    padding-left: 1em;
+
+    h5 {
+      position: relative;
+      color: rosybrown;
+
+      > a, > a:link, > a:visited {color: rosybrown}
+      > a:hover, > a:active {color: #999}
+
+      .resource-icon {
+        position: absolute;
+        top: 0;
+        left: -3.15em;
+        color: rosybrown;
+        background: white;
+        padding-top: 2px;
+        margin-top: -2px;
+        padding-bottom: 2px;
+      }
+    }
+  }
+}

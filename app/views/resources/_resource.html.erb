@@ -1,10 +1,16 @@
 <% unless resource.nil? %>
-<div id="<%= "resource_#{resource.id}"%>" class="well well-sm resource">
-  <span class="resource-name"><%= resource.name unless resource.nil? %></span>
-  <span class="resource-description"><%= resource.description unless resource.nil? %></span>
-  <span class="resource-type"><%= "(#{resource.type})" unless resource.nil? %></span>
-  <span class="resource-url"><%= link_to resource.url, resource.url, target: '_blank' unless resource.nil? %></span>
-  <span class="resource-votes"><%= "(#{resource.plusminus})" %></span>
+<li id="resource-<%= resource.id %>" data-id="<%= resource.id %>" class="resource">
+  <h5 class="resource-name">
+    <%= link_to resource.name, resource.url, target: '_blank' unless resource.nil? %>
+    <small><%= link_to resource.url, resource.url, target: '_blank' unless resource.nil? %></small>
+    <span class="resource-icon icon-link"></span>
+  </h5>
+  <p>
+    <span class="resource-type label label-default"><%= resource.type unless resource.nil? %></span>
+    <small class="resource-description"><%= resource.description unless resource.nil? %></small>
+  </p>
+
+  <span class="resource-votes"><%#= "(#{resource.plusminus})" %></span>
   <span class="resource-vote-up"><%=
       if user_signed_in? && !current_user.voted_on?(resource) && resource.user != current_user
         link_to('+', vote_up_resource_path(resource), :remote => true, :method => :post)
@@ -13,5 +19,5 @@
       if user_signed_in? && !current_user.voted_on?(resource) && resource.user != current_user
         link_to('-', vote_down_resource_path(resource), :remote => true, :method => :post)
       end %></span>
-</div>
+</li>
 <% end %>

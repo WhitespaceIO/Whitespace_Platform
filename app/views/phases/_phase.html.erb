@@ -1,4 +1,8 @@
 <li id="phase-<%= phase.id %>" data-id="<%= phase.id %>" class="phase <% if phase.started? %>started<% end %> <% if phase.completed? %>completed<% end %>">
-    <h3><%= phase.name %> - <%= link_to phase.description, project_phase_path(phase.project, phase) %></h3>
-    <%= render partial: 'phases/details', object: phase, :as => :phase %>
+  <hr class="phase-separator">
+  <h3>
+    <%= link_to phase.description, project_phase_path(phase.project, phase) %>
+    <span class="phase-icon phase-icon-<%= phase.name.downcase %> icon-leaf"></span>
+  </h3>
+  <%= render partial: 'phases/details', object: phase, :as => :phase %>
 </li>

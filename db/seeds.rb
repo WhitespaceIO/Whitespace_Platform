@@ -70,28 +70,28 @@ whitespace.tags.create(name: 'better good')
 whitespace.tags.create(name: 'empowerment')
 
 platform = whitespace.phase.ideas.create!(text: 'Need a web platform', user: sally, created_at: (Time.now + 1.day), accepted_at: (Time.now + 1.day + 1.hour))
-platform.resources.create!(type: 'Software', user: user, name: 'Rails', description: 'Ruby On Rails', url: 'http://rubyonrails.org')
+platform.resources.create!(type: 'Software', user: user, name: 'Rails', description: 'Ruby on Rails is a breakthrough in lowering the barriers of entry to programming. Powerful web applications that formerly might have taken weeks or months to develop can be produced in a matter of days.', url: 'http://rubyonrails.org')
 platform.comments.create!(text: 'Totally!', user: tim, created_at: (Time.now + 2.days))
 
 app = whitespace.phase.ideas.create!(text: 'Need a mobile app!', user: james, created_at: (Time.now + 3.days))
-app.resources.create!(type: 'Software', user: user, name: 'iOS App', description: 'Apple iOS', url: 'http://apple.com')
+app.resources.create!(type: 'Software', user: user, name: 'iOS App', description: 'iOS 7 introduces great new features like Control Center, AirDrop for iOS and smarter multitasking. It also makes the things you do every day even easier, faster and more enjoyable. And while many of the apps look different, the way you do things feels perfectly familiar. So from day one, you know how to use the world\'s most advanced mobile OS. In its most advanced form.', url: 'http://apple.com')
 app.comments.create!(text: 'iOS?', user: tim, created_at: (Time.now + 4.days))
 app.comments.create!(text: 'Yes! And Android!', user: james, created_at: (Time.now + 5.days))
 
 whitespace.accept_phase
 
 weekly = whitespace.phase.ideas.create!(text: 'Weekly meetings', user: sally, created_at: (Time.now + 6.days))
-weekly.resources.create!(type: 'Software', user: user, name: 'Google Calendar', description: 'Google Calendar', url: 'https://www.google.com/calendar')
+weekly.resources.create!(type: 'Software', user: user, name: 'Google Calendar', description: 'With Google\'s free online calendar, its easy to keep track of life\'s important events all in one place.', url: 'https://www.google.com/calendar')
 weekly.comments.create!(text: 'We need some place to centrally organize info', user: tim, created_at: (Time.now + 7.days))
 weekly.comments.create!(text: 'We need to be able to collaborate with those in different locations', user: sally, created_at: (Time.now + 8.days))
 
 gdrive = whitespace.phase.ideas.create!(text: 'Use Google Drive and Github', user: james, created_at: (Time.now + 9.days), accepted_at: (Time.now + 9.days + 1.hour))
-gdrive.resources.create!(type: 'Software', user: user, name: 'Google Drive', description: 'Google Drive', url: 'https://docs.google.com')
+gdrive.resources.create!(type: 'Software', user: user, name: 'Google Drive', description: 'Google Drive is a free way to keep your files backed up and easy to reach from any phone, tablet, or computer.', url: 'https://docs.google.com')
 gdrive.comments.create!(text: 'Google Drive is complicated', user: tim, created_at: (Time.now + 10.days))
 gdrive.comments.create!(text: 'True, and not all projects need a code repo!', user: james, created_at: (Time.now + 11.days))
 
 online_platform = whitespace.phase.ideas.create!(text: 'Online web platform', user: tim, created_at: (Time.now + 12.days))
-online_platform.resources.create!(type: 'Software', user: user, name: 'WordPress', description: 'WordPress', url: 'http://wordpress.org')
+online_platform.resources.create!(type: 'Software', user: user, name: 'WordPress', description: 'WordPress is a state-of-the-art semantic personal publishing platform with a focus on aesthetics, web standards, and usability.', url: 'http://wordpress.org')
 online_platform.comments.create!(text: 'This sounds like it might actually work!', user: sally, created_at: (Time.now + 13.days))
 online_platform.comments.create!(text: 'I love this!', user: james, created_at: (Time.now + 14.days))
 

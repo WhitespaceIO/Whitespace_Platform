@@ -9,20 +9,28 @@
       <small class="idea-vote-up"><%= link_to(image_tag('thumb_up.png'), vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
       <small class="idea-vote-down"><%= link_to(image_tag('thumb_down.png'), vote_down_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) %></small>
     </span>
+    <span class="idea-icon icon-bug"></span>
   </h4>
 
-  <ol id="idea-comments">
+  <ol class="idea-comments comments timeline list-unstyled">
+    <li class="timeline-axis"></li>
     <% idea.comments.each do |comment| %>
-      <li class="comment">
+      <li id="comment-<%= comment.id %>" data-id="<%= comment.id %>" class="comment">
         <!--<%= link_to image_tag('user@2x.png'), user_path(comment.user), {:class => 'comment-author thumbnail pull-right'} %>-->
-        <p class="comment-text"><%= comment.text %> - <%= link_to comment.user.email, user_path(comment.user) %></p>
+        <p class="comment-text">
+          <%= comment.text %> -
+          <%= link_to comment.user.email, user_path(comment.user) %>
+          <span class="comment-icon icon-comment"></span>
+        </p>
       </li>
     <% end %>
+      <li class="comment create">
+        <!--<%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>-->
+        <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'} do |f| %>
+          <%= f.text_field :text, :placeholder => 'I think this is...', :class => 'form-control' %>
+          <span class="comment-icon icon-comment"></span>
+          <span class="comment-icon comment-create-icon icon-plus"></span>
+        <% end %>
+      </li>
   </ol>
-  <!--<%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>-->
-  <p class="comment-text">
-    <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'} do |f| %>
-      <%= f.text_field :text, :placeholder => 'I think this is...', :class => 'form-control' %>
-    <% end %>
-  </p>
 </li>
