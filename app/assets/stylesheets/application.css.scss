@@ -167,25 +167,43 @@ hr:after {
     display: block;
     width: 0;
     height: 100%;
+
+    display: none;
   }
 
   .comment {
     a, a:link, a:visited, a:hover, a:active {color: #999}
     padding-left: 1em;
 
-    p {
+    p, form {
       position: relative;
       color: #df7c79;
 
       .comment-icon {
         position: absolute;
         top: 0;
-        left: -4.15em;
+        left: -2.5em;
         color: #df7c79;
         background: white;
         padding-top: 2px;
-        margin-top: -2px;
         padding-bottom: 2px;
+      }
+    }
+
+    &.create {
+      position: relative;
+
+      form {
+        .comment-icon {
+          top: 0.5em;
+          color: #e0e0e0;
+        }
+
+        .comment-create-icon {
+          left: -1.6em;
+          top: 1em;
+          background: transparent;
+        }
       }
     }
   }

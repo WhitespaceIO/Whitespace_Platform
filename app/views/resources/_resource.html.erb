@@ -1,5 +1,5 @@
 <% unless resource.nil? %>
-<li id="<%= "resource-#{resource.id}"%>" class="resource">
+<li id="resource-<%= resource.id %>" data-id="<%= resource.id %>" class="resource">
   <h5 class="resource-name">
     <%= link_to resource.name, resource.url, target: '_blank' unless resource.nil? %>
     <small><%= link_to resource.url, resource.url, target: '_blank' unless resource.nil? %></small>

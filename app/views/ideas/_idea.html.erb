@@ -24,11 +24,13 @@
         </p>
       </li>
     <% end %>
+      <li class="comment create">
+        <!--<%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>-->
+        <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'} do |f| %>
+          <%= f.text_field :text, :placeholder => 'I think this is...', :class => 'form-control' %>
+          <span class="comment-icon icon-comment"></span>
+          <span class="comment-icon comment-create-icon icon-plus"></span>
+        <% end %>
+      </li>
   </ol>
-  <!--<%= image_tag 'user@2x.png', {:class => 'comment-author thumbnail pull-right'} %>-->
-  <p class="comment-text">
-    <%= form_for Comment.new, :url => new_project_phase_idea_comment_path(idea.phase.project, idea.phase, idea), :remote => true, :html => {id: 'phase-comment'} do |f| %>
-      <%= f.text_field :text, :placeholder => 'I think this is...', :class => 'form-control' %>
-    <% end %>
-  </p>
 </li>
