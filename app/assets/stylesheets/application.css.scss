@@ -77,3 +77,109 @@ hr:after {
   }
 }
 
+.phases {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 4px solid #a8eacb;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  .phase {
+    padding-left: 1.8em;
+
+    hr.phase-separator {     // todo: swap to border-top
+      border-top: 1px solid #a8eacb;
+      margin-left: -1.6em;
+      margin-right: -1.6em;
+    }
+
+    h3 {
+      position: relative;
+      color: #a8eacb;
+
+      .phase-icon {
+        position: absolute;
+        top: 0em;
+        left: -1.5em;
+
+        color: #a8eacb;
+        background: white;
+      }
+    }
+  }
+}
+
+.ideas {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 1px solid #b6e5f5;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  .idea {
+    padding-left: 1.4em;
+
+    h4 {
+      position: relative;
+
+      .idea-icon {
+        position: absolute;
+        top: 0em;
+        left: -1.5em;
+
+        color: #b6e5f5;
+        background: white;
+      }
+    }
+  }
+}
+
+.comments {
+  position: relative;
+
+  > .timeline-axis {
+    border-left: 1px dotted #eaaaa8;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+
+  .comment {
+    padding-left: 1.4em;
+
+    p {
+      position: relative;
+      color: #eaaaa8;
+
+      .comment-icon {
+        position: absolute;
+        top: 0em;
+        left: -1.8em;
+
+        color: #eaaaa8;
+        background: white;
+      }
+    }
+  }
+}

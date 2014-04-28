@@ -1,4 +1,5 @@
-<ul class="phase-ideas">
+<ul class="ideas phase-ideas timeline list-unstyled">
+  <li class="timeline-axis"></li>
   <%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %>
   <% if phase.started? && !phase.completed? %>
       <%= render partial: 'ideas/add', :locals => {:phase => phase, :idea => Idea.new} %>
