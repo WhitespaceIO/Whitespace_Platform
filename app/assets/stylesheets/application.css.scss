@@ -14,15 +14,6 @@ body {
   padding-top: 60px;
 }
 
-h3 > .badge {
-  vertical-align: middle;
-}
-
-.panel > h3.panel-heading {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .navbar {
   margin-bottom: 0;
 }
@@ -32,7 +23,6 @@ h3 > .badge {
   margin-right: auto;
   margin-left: auto;
 }
-
 
 .clear:after,
 hr:after {
@@ -51,24 +41,6 @@ hr:after {
 .users {
   li {
     overflow: hidden;
-  }
-}
-
-.idea {
-  .thumbnail > img {
-    max-width: 50px;
-    max-height: 50px;
-  }
-}
-
-.idea-votes {
-  float:right;
-}
-.phase-stats {
-  float:right;
-  img {
-    padding-left:3px;
-    padding-right:10px;
   }
 }
 

@@ -4,7 +4,7 @@
   <h4>
     <%= link_to idea.text, project_phase_idea_path(idea.phase.project, idea.phase, idea) %> -
     <small><%= link_to idea.user.email, user_path(idea.user) %></small>
-    <span class="idea-votes">
+    <span class="idea-votes pull-right">
       <small class="idea-vote-for"><%= idea.votes_for %></small>
       <small class="idea-vote-up">
         <%= link_to(vote_up_project_phase_idea_path(idea.phase.project, idea.phase, idea), :remote => true, :method => :post) do %>
