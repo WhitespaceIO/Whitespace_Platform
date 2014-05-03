@@ -52,11 +52,15 @@ hr:after {
 
     .phase-name {
       border-bottom: 1px solid #79dfaf;
+      padding-top: 2px;
+
       position: absolute;
       left: 0;
       bottom: 0;
+
       height: 100%;
       width: 100%;
+
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -157,7 +161,6 @@ hr:after {
     hr.phase-separator {     // todo: swap to border-top
       border-top: 1px solid #79dfaf;
       margin-left: -1.6em;
-      margin-right: -1.6em;
     }
 
     h3 {
