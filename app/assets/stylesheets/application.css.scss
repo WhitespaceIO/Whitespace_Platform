@@ -73,6 +73,12 @@ hr:after {
       width: 0;
       bottom: 100%;
 
+      -webkit-transition: 200ms all ease-out;
+      -moz-transition: 200ms all ease-in-out;
+      -ms-transition: 200ms all ease-in-out;
+      -o-transition: 200ms all ease-in-out;
+      transition: 200ms all ease-in-out;
+
       .tooth-icon {
         position: absolute;
         left: -0.5em;
@@ -83,22 +89,19 @@ hr:after {
         opacity: 0;
         filter: opacity(0);
 
+        font-size: 0;
+
         -webkit-transition: 200ms all ease-out;
         -moz-transition: 200ms all ease-in-out;
         -ms-transition: 200ms all ease-in-out;
         -o-transition: 200ms all ease-in-out;
         transition: 200ms all ease-in-out;
       }
-
-      &:hover .tooth-icon {
-        opacity: 1;
-        filter: opacity(1);
-      }
     }
 
     .tooth.phase {
       border-left: 2px solid #79dfaf;
-      height: 150%;
+      height: 140%;
 
       .tooth-icon {
         color: #79dfaf;
@@ -129,6 +132,17 @@ hr:after {
 
       .tooth-icon {
         color: rosybrown;
+      }
+    }
+
+    .tooth:hover {
+      height: 160%;
+
+      .tooth-icon {
+        opacity: 1;
+        filter: opacity(1);
+
+        font-size: 1em;
       }
     }
   }
