@@ -10,24 +10,24 @@
   <% if phase.completed? %>completed<% end %>
   <% if phase.started? %>started<% end %>">
 
-  <a class="phase-name" title="<%= phase.name %>" href="<%= project_path(phase.project) %>/#phase-<%= phase.id %>">
+  <a class="phase-name" title="<%= phase.name %>" href="<%= project_path(phase.project) %>#phase-<%= phase.id %>">
     <%= phase.name %>
   </a>
 
-  <a class="tooth phase" title="<%= phase.description %>" href="<%= project_path(phase.project) %>/#phase-<%= phase.id %>">
+  <a class="tooth phase" title="<%= phase.description %>" href="<%= project_path(phase.project) %>#phase-<%= phase.id %>">
     <span class="sr-only"><%= phase.description %></span>
     <span class="tooth-icon icon-leaf"></span>
   </a>
 
   <% phase.ideas.each do |idea| %>
-    <a class="tooth idea" title="<%= idea.text %>" href="<%= project_path(phase.project) %>/#idea-<%= idea.id %>"
+    <a class="tooth idea" title="<%= idea.text %>" href="<%= project_path(phase.project) %>#idea-<%= idea.id %>"
        style="left: <%= get_left_for.call idea %>%">
       <span class="sr-only"><%= idea.text %></span>
       <span class="tooth-icon icon-bug"></span>
     </a>
 
     <% idea.comments.each do |comment| %>
-      <a class="tooth comment" title="<%= comment.text %>" href="<%= project_path(phase.project) %>/#comment-<%= comment.id %>"
+      <a class="tooth comment" title="<%= comment.text %>" href="<%= project_path(phase.project) %>#comment-<%= comment.id %>"
          style="left: <%= get_left_for.call comment %>%">
         <span class="sr-only"><%= comment.text %></span>
         <span class="tooth-icon icon-comment"></span>
@@ -36,7 +36,7 @@
   <% end %>
 
   <% phase.resources.each do |resource| %>
-    <a class="tooth resource" title="<%= resource.name %>" href="<%= project_path(phase.project) %>/#resource-<%= resource.id %>"
+    <a class="tooth resource" title="<%= resource.name %>" href="<%= project_path(phase.project) %>#resource-<%= resource.id %>"
        style="left: <%= get_left_for.call resource %>%">
       <span class="sr-only"><%= resource.name %></span>
       <span class="tooth-icon icon-link"></span>
