@@ -10,12 +10,8 @@
  *
  *= require_self
  */
-body {
-  padding-top: 60px;
-}
-
-.navbar {
-  margin-bottom: 0;
+nav.navbar {
+  border-radius: 0;
 }
 
 #whitespace-is {
@@ -44,7 +40,122 @@ hr:after {
   }
 }
 
-.phases {
+.comb.phases {
+  overflow: visible;
+  margin-top: 50px;
+  border-radius: 0;
+
+  .phase-container {
+    position: relative;
+    background: transparent;
+    width: 11.11111111111111%;
+
+    .phase-name {
+      border-bottom: 1px solid #79dfaf;
+      padding-top: 2px;
+      color: #999;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      height: 100%;
+      width: 100%;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .tooth {
+      position: absolute;
+      text-align: left;
+      display: block;
+      width: 0;
+      bottom: 100%;
+
+      -webkit-transition: 200ms all ease-out;
+      -moz-transition: 200ms all ease-in-out;
+      -ms-transition: 200ms all ease-in-out;
+      -o-transition: 200ms all ease-in-out;
+      transition: 200ms all ease-in-out;
+
+      .tooth-icon {
+        position: absolute;
+        left: -0.5em;
+        top: -1.1em;
+        text-decoration: none;
+        z-index: 1;
+
+        opacity: 0;
+        filter: opacity(0);
+
+        font-size: 0;
+
+        -webkit-transition: 200ms all ease-out;
+        -moz-transition: 200ms all ease-in-out;
+        -ms-transition: 200ms all ease-in-out;
+        -o-transition: 200ms all ease-in-out;
+        transition: 200ms all ease-in-out;
+      }
+    }
+
+    .tooth.phase {
+      border-left: 2px solid #79dfaf;
+      height: 140%;
+
+      .tooth-icon {
+        color: #79dfaf;
+      }
+    }
+
+    .tooth.idea {
+      border-left: 2px solid #71ccec;
+      height: 120%;
+
+      .tooth-icon {
+        color: #71ccec;
+      }
+    }
+
+    .tooth.comment {
+      border-left: 1px solid #df7c79;
+      height: 80%;
+
+      .tooth-icon {
+        color: #df7c79;
+      }
+    }
+
+    .tooth.resource {
+      border-left: 1px solid rosybrown;
+      height: 60%;
+
+      .tooth-icon {
+        color: rosybrown;
+      }
+    }
+
+    .tooth:hover {
+      height: 160%;
+
+      .tooth-icon {
+        opacity: 1;
+        filter: opacity(1);
+
+        font-size: 1em;
+      }
+    }
+  }
+
+  &.folded {
+    .phase-container {
+      width: 0;
+    }
+  }
+}
+
+.timeline.phases {
   position: relative;
 
   > .timeline-axis {
@@ -65,7 +176,6 @@ hr:after {
     hr.phase-separator {     // todo: swap to border-top
       border-top: 1px solid #79dfaf;
       margin-left: -1.6em;
-      margin-right: -1.6em;
     }
 
     h3 {
@@ -87,7 +197,7 @@ hr:after {
   }
 }
 
-.ideas {
+.timeline.ideas {
   position: relative;
 
   > .timeline-axis {
@@ -126,7 +236,7 @@ hr:after {
   }
 }
 
-.comments {
+.timeline.comments {
   position: relative;
 
   > .timeline-axis {
@@ -181,7 +291,7 @@ hr:after {
   }
 }
 
-.resources {
+.timeline.resources {
   position: relative;
 
   > .timeline-axis {
