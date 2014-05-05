@@ -12,6 +12,7 @@ gem 'font-awesome-rails'
 gem 'figaro'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'gravatar_image_tag'
+gem 'pismo'
 
 group :production do
   gem 'pg'

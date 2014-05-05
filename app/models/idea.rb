@@ -1,5 +1,5 @@
 class Idea < ActiveRecord::Base
-  attr_accessible :text, :user, :phase, :accepted_at, :created_at
+  attr_accessible :text, :user, :phase, :accepted_at, :created_at, :resources
 
   belongs_to :phase
   belongs_to :user

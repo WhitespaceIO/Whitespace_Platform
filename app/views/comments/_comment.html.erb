@@ -1,16 +1,7 @@
-<% if user_signed_in? || comment.private == false %>
-<div id="<%= "comment_#{comment.id}"%>" class="well comment">
-  <span class="comment-text">"<%= comment.text %>"</span>
-  <span class="comment-user"> - <%= comment.user.nil? ? "Anonymous" : comment.user.display_name %></span>
-  <span class="comment-date"><%= comment.created_at.strftime('at %l:%M%P on %B %d, %Y') %></span>
-  <span class="comment-votes"><%= "(#{comment.plusminus})" %></span>
-  <span class="comment-vote-up"><%=
-      if user_signed_in? && !current_user.voted_on?(comment) && comment.user != current_user
-        link_to('+', vote_up_comment_path(comment), :remote => true, :method => :post)
-      end %></span>
-  <span class="comment-vote-down"><%=
-      if user_signed_in? && !current_user.voted_on?(comment) && comment.user != current_user
-        link_to('-', vote_down_comment_path(comment), :remote => true, :method => :post)
-      end %></span>
-</div>
-<% end %>
+<li id="comment-<%= comment.id %>" data-id="<%= comment.id %>" class="comment">
+  <p class="comment-text">
+    <%= comment.text %> -
+    <%= link_to comment.user.display_name, user_path(comment.user) %>
+    <span class="comment-icon icon-comment"></span>
+  </p>
+</li>

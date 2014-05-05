@@ -1,5 +1,5 @@
 <% unless resource.nil? %>
-<li id="resource-<%= resource.id %>" data-id="<%= resource.id %>" class="resource">
+<li id="resource-<%= resource.id %>" data-id="<%= resource.id %>" data-url="<%= resource.url %>" class="resource">
   <h5 class="resource-name">
     <%= link_to resource.name, resource.url, target: '_blank' unless resource.nil? %>
     <small><%= link_to resource.url, resource.url, target: '_blank' unless resource.nil? %></small>
@@ -9,7 +9,6 @@
     <span class="resource-type label label-default"><%= resource.type unless resource.nil? %></span>
     <small class="resource-description"><%= resource.description unless resource.nil? %></small>
   </p>
-
   <span class="resource-votes"><%#= "(#{resource.plusminus})" %></span>
   <span class="resource-vote-up"><%=
       if user_signed_in? && !current_user.voted_on?(resource) && resource.user != current_user

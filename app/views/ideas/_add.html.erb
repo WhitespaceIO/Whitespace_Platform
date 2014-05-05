@@ -1,4 +1,0 @@
-<!--<%= image_tag 'user@2x.png', {:class => 'idea-user thumbnail pull-left'} %>-->
-<%= form_for Idea.new, :url => new_project_phase_idea_path(phase.project, phase), :html => {id: 'idea-form', :class => 'form-inline'} do |f| %>
-  <%= f.text_field :text, :placeholder => phase.description, :class => 'form-control' %>
-<% end %>

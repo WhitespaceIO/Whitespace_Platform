@@ -1,13 +1,16 @@
-<ul class="ideas phase-ideas timeline list-unstyled">
+<ul data-phase="<%= phase.id %>" class="ideas phase-ideas timeline list-unstyled">
   <li class="timeline-axis"></li>
   <%= render partial: 'ideas/idea', :collection => phase.ideas, :as => :idea %>
   <% if phase.started? && !phase.completed? %>
-      <%= render partial: 'ideas/add', :locals => {:phase => phase, :idea => Idea.new} %>
+    <li class="idea">
+      <h4><span class="idea-icon icon-bug"></span></h4>
+      <% if user_signed_in? %>
+      <%= render partial: 'ideas/form', :locals => {:phase => phase,
+                                                    :idea => Idea.new,
+                                                    :url => project_phase_ideas_path(phase.project, phase),
+                                                    :placeholder => phase.description} %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
-
 <div class="phase-comments"><%= render partial: 'comments/comment', :collection => phase.comments, :as => :comment %></div>
-<ul class="resources phase-resources timeline list-unstyled">
-  <li class="timeline-axis"></li>
-  <%= render partial: 'resources/resource', :collection => phase.resources, :as => :resource %>
-</ul>

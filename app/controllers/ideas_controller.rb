@@ -11,6 +11,7 @@ class IdeasController < ApplicationController
   def new
     @idea = Idea.new
     @idea.phase = @phase
+    @idea.resources.build
     respond_with_ideas :ok, @idea
   end
 
@@ -19,19 +20,29 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @project = Project.find(params[:project_id])
-    @phase = @project.phases.where(:type => params[:phase_id].capitalize).first
-    @idea = @phase.ideas.create(params[:idea].merge(user: current_user))
+    logger.info "Params #{params.inspect}"
+    if params[:idea].has_key?(:resources)
+      resources = []
+      if params[:idea][:resources][:id].present?
+        resources << Resource.find(params[:idea][:resources][:id])
+      elsif params[:idea][:resources][:name].present? && params[:idea][:resources][:url].present?
+        resources << Resource.create!(name: params[:idea][:resources][:name],
+                                      url: params[:idea][:resources][:url])
+      end
+      logger.info "Resources #{resources}"
+      params[:idea].delete(:resources)
+    end
+    @idea = @phase.ideas.create(params[:idea].merge(user: current_user).merge(resources: resources))
     logger.info "Idea #{@idea.inspect}"
     respond_with_ideas :created,
                        @idea,
-                       project_phase_path(@idea.phase.project, @idea.phase),
-                       'Proposal was successfully created.'
+                       request.referer || project_phase_path(@project, @phase),
+                       'Idea was successfully created.'
   end
 
   def update
     @idea.update_attributes!(params[:idea])
-    respond_with_ideas :created, @idea, nil, 'Proposal was successfully updated.'
+    respond_with_ideas :created, @idea, nil, 'Idea was successfully updated.'
   end
 
   def destroy
@@ -60,8 +71,8 @@ class IdeasController < ApplicationController
   def find_phase
     if params.has_key?(:project_id)
       @phase = @project.phases.where(:type => params[:phase_id].capitalize).first
-    else
-      @phase = Phase.where('id =? OR type = ?', params[:id], params[:id].capitalize).first
+    elsif params.has_key?(:phase_id)
+      @phase = Phase.where('id =? OR type = ?', params[:phase_id], params[:phase_id].capitalize).first
     end
   end
 

@@ -4,6 +4,7 @@ class CreateResources < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :url
+      t.string :favicon
       t.string :type
       t.belongs_to :user
       t.timestamps

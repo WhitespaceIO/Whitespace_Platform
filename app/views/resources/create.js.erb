@@ -1,5 +1,6 @@
-$resources = $('#resources');
+<% unless @resource.nil? %>
+$resources = $(".resources[data-idea='0']");
 $resources.append('<%=j render partial: 'resources/resource', object: @resource %>');
-$form = $('resource-form');
-$inputs = $('#resource-form').find('input').not(':button, :submit, :reset, :hidden');
-$inputs.val('').removeAttr('checked').removeAttr('selected');
+$form = $("#idea-form");
+$form.append($('<input/>',{type:'hidden',name:'idea[resources][id]',value:'<%= @resource.id %>'}));
+<% end %>

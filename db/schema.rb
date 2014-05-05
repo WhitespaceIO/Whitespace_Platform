@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130924033652) do
     t.string   "name"
     t.text     "description"
     t.string   "url"
+    t.string   "favicon"
     t.string   "type"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false

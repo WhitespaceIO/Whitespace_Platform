@@ -1,19 +1,3 @@
-<%= form_for @comment, :url => url, :remote => true, :html => {id: 'comment-form', :class => 'form-inline'} do |f| %>
-     <% if @comment.errors.any? %>
-          <ul class="errors">
-            <% @comment.errors.full_messages.each do |msg| %>
-                 <li><%= msg %></li>
-            <% end %>
-          </ul>
-     <% end %>
-    <div class="form-group">
-        <%= f.text_area :text, {:placeholder => 'Comment', :class => 'form-control', :rows => 3} %>
-    </div>
-    <div class="checkbox">
-     <%= f.label :private do %>
-          <%= f.check_box :private %>
-          Private?
-     <% end %>
-    </div>
-     <%= f.submit 'Submit', :class => 'btn btn-default' %>
+<%= form_for local_assigns.has_key?(:comment) ? comment : Comment.new, :url => url, :remote => true, :html => {id: 'comment-form'} do |f| %>
+  <%= f.text_field :text, :placeholder => local_assigns.has_key?(:placeholder) ? placeholder : 'Add comment', :class => 'form-control' %>
 <% end %>

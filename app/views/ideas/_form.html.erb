@@ -1,11 +1,39 @@
-<%= form_for @idea, :url => new_project_phase_idea_path(phase.project, phase, idea), :html => {id: 'idea-form', :class => 'form-inline'} do |f| %>
-  <% if @idea.errors.any? %>
-       <ul class="errors">
-         <% @idea.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-         <% end %>
-       </ul>
-  <% end %>
-     <%= f.text_area :text, {:placeholder => 'Idea', :rows => 1} %>
-  <%= f.submit 'Submit', :class => 'btn btn-default' %>
+<%= form_for local_assigns.has_key?(:idea) ? idea : Idea.new,
+             :url => local_assigns.has_key?(:url) ? url : new_idea_path,
+             :remote => local_assigns.has_key?(:remote) ? remote : false,
+             :html => {id: 'idea-form'} do |f| %>
+  <%= f.text_field :text, :placeholder => local_assigns.has_key?(:placeholder) ? placeholder : 'Add idea', :class => 'form-control' %>
+  <ul data-idea="0" class="resources phase-resources timeline list-unstyled"></ul>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(window).keydown(function(event){
+      if (event.keyCode == 13) {
+        var $input = $(':focus');
+        var $form = $input.parents('form:first');
+        $form.submit();
+        event.preventDefault();
+        return false;
+      }
+      return true;
+    });
+    $('#idea_text').keyup(function () {
+      var urls = $(this).val().match(/\b(http|https)?(:\/\/)?(\S*)\.(\w{2,4})\b/ig);
+      if (urls != null && urls.length > 0) {
+        for (var i = 0, il = urls.length; i < il; i++) {
+          var url = urls[i];
+          var $list = $(".resources[data-idea='0']");
+          if ($list.find("li[data-url='" + url + "']").length == 0) {
+            $list.append($('<li>').addClass('resource').css('display','none').attr('data-url',url));
+            $.ajax({
+              url:'<%= resources_path(:format => :js) %>',
+              type:"post",
+              dataType:"script",
+              data:{url: url, idea_id: <%= idea.id || 0 %>, phase_id: <%= phase.id %>}
+            });
+          }
+        }
+      }
+    });
+  });
+</script>
